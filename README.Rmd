@@ -17,3 +17,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Forschungsfrage
 Akzeptanz von **KI** als **Rechtsberatung**
+
+## Faktorenraum
+![Faktorenraum](README_files/figure-markdown_strict/FaktorenraumBSP.png)
