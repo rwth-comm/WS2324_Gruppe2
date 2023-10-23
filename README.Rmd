@@ -1,0 +1,19 @@
+---
+title: "README"
+author: "ZNB"
+date: "2023-10-23"
+output: md_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Akzeptanz von KI als Rechtsberatung
+## Teammitglieder
+* LC
+* SP
+* ZNB
+
+# Forschungsfrage
+Akzeptanz von **KI** als **Rechtsberatung**
