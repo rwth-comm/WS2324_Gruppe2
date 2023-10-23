@@ -16,4 +16,4 @@ knitr::opts_chunk$set(echo = TRUE)
 * ZNB
 
 # Forschungsfrage
-Akzeptanz von **KI** als **Rechtsberatung**
+Akzeptanz von **KI** als **Rechtsberatung** bei Laien
