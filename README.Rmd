@@ -17,3 +17,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Forschungsfrage
 Akzeptanz von **KI** als **Rechtsberatung** bei Laien
+
+## Faktorenraum
+![Faktorenraum Rechtsberatung KI](README.files/image_720.png)
