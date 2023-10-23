@@ -8,8 +8,8 @@ output: md_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+# Akzeptanz von KI als Rechtsberatung
 
-#Akzeptanz von KI als Rechtsberatung
 ## Teammitglieder
 * LC
 * SP

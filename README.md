@@ -1,5 +1,10 @@
-\#Akzeptanz von KI als Rechtsberatung \## Teammitglieder \* LC \* SP \*
-ZNB
+# Akzeptanz von KI als Rechtsberatung
+
+## Teammitglieder
+
+-   LC
+-   SP
+-   ZNB
 
 # Forschungsfrage
 
