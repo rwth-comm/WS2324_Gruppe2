@@ -1,14 +1,19 @@
-\#Akzeptanz von KI als Rechtsberatung \## Teammitglieder \* LC \* SP \*
+\#Verhaltensänderung beim Klimawandel \## Teammitglieder \* LC \* SP \*
 ZNB
 
 # Forschungsfrage
 
-Akzeptanz von **KI** als **Rechtsberatung**
+Wie beeinflusst das **persönliche Bedrohungsempfinden** die
+**Bereitschaft zum Ergreifen** von Klimaschutzmaßnahmen?
+
+## Scopus-Recherche
+
+Abstract-Info
 
 ## Faktorenraum
 
 <figure>
-<img src="README_files/figure-markdown_strict/FaktorenraumBSP.png"
+<img src="README_files/figure-markdown_strict/Faktorenraum2.png"
 alt="Faktorenraum" />
 <figcaption aria-hidden="true">Faktorenraum</figcaption>
 </figure>

@@ -9,14 +9,17 @@ output: md_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-#Akzeptanz von KI als Rechtsberatung
+#Verhaltensänderung beim Klimawandel
 ## Teammitglieder
 * LC
 * SP
 * ZNB
 
 # Forschungsfrage
-Akzeptanz von **KI** als **Rechtsberatung**
+Wie beeinflusst das **persönliche Bedrohungsempfinden** die **Bereitschaft zum Ergreifen** von Klimaschutzmaßnahmen?
+
+## Scopus-Recherche
+Abstract-Info
 
 ## Faktorenraum
-![Faktorenraum](README_files/figure-markdown_strict/FaktorenraumBSP.png)
+![Faktorenraum](README_files/figure-markdown_strict/Faktorenraum2.png)
