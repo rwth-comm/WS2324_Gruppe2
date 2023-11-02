@@ -18,7 +18,7 @@ Abstract-Info
 ## Faktorenraum
 
 <figure>
-<img src="README_files/figure-markdown_strict/Faktorenraum3"
+<img src="README_files/figure-markdown_strict/Faktorenraum3.png"
 alt="Faktorenraum" />
 <figcaption aria-hidden="true">Faktorenraum</figcaption>
 </figure>
@@ -56,8 +56,8 @@ Statements -&gt; orientiert an
 Messinstrument/ Text\] **Miss-/ Vertrauen in die Wissenschaft** ordinal:
 *Item mit 5-stufiger Likert-Skala* orientiert an
 (<https://www.wissenschaft-im-dialog.de/fileadmin/user_upload/Projekte/Wissenschaftsbarometer/Dokumente_22/Fragebogen_Wissenschaftsbarometer2022_CATI.pdf>)\[diesem
-Messinstrument/ Text\] **Internaler/ externaler Kontrollfokus**
-ordinaler Wert: *Kurzskala nach Kovaleva et al. 2012*
+Messinstrument/ Text\] **Internaler/externaler Kontrollfokus** ordinaler
+Wert: *Kurzskala nach Kovaleva et al 2012*
 (<https://www.gesis.org/fileadmin/kurzskalen/working_papers/IE4_Workingpaper.pdf>)\[siehe
 Hier\] **Persönlichkeit** Item orientiert am Big 5 Test der Uni Leipzig
 (<https://leipzig-bfi2-60.formr.org/> ,

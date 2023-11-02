@@ -23,7 +23,8 @@ Wie beeinflusst das **persönliche Bedrohungsempfinden** die **Bereitschaft zum 
 Abstract-Info
 
 ## Faktorenraum
-![Faktorenraum](README_files/figure-markdown_strict/Faktorenraum3)
+![Faktorenraum](README_files/figure-markdown_strict/Faktorenraum3.png)
+
 
 # Operationalisieren des Fragebogens/ der Items
 
@@ -41,7 +42,7 @@ Abstract-Info
 **Mediennutzung/–Konsum**  ordinal: verschiedene Items  _Item-Medienkonsum_ (Häufigkeit)  _Rangliste  Item-Medienkonsum_ -> Mehrfachantwort, Likert-Skala (mehrfach die Woche, einmal …)  _Klimainhalte-Konsum_ (Was wird genutzt?) Mehrfachantwort, Likert-Skala mit Statements Bsp.: “Ich konsumiere Inhalte zum Thema Klimawandel/ -Schutz”
 **Media Literacy**  Ordinal: Mehrfachantwort, Likert-Skala Statements -> orientiert an	(https://repositorio.ual.pt/bitstream/11144/3873/1/%5BCommunications%5D%20Measuring%20media%20and%20information%20literacy%20skills%20Construction%20of%20a%20test.pdf)[diesem Messinstrument/ Text]
 **Miss-/ Vertrauen in die Wissenschaft**  ordinal: _Item mit 5-stufiger Likert-Skala_ orientiert an (https://www.wissenschaft-im-dialog.de/fileadmin/user_upload/Projekte/Wissenschaftsbarometer/Dokumente_22/Fragebogen_Wissenschaftsbarometer2022_CATI.pdf)[diesem Messinstrument/ Text]
-**Internaler/ externaler Kontrollfokus**  ordinaler Wert: _Kurzskala nach Kovaleva et al. 2012_  (https://www.gesis.org/fileadmin/kurzskalen/working_papers/IE4_Workingpaper.pdf)[siehe Hier]
+**Internaler/externaler Kontrollfokus**  ordinaler Wert: _Kurzskala nach Kovaleva et al 2012_  (https://www.gesis.org/fileadmin/kurzskalen/working_papers/IE4_Workingpaper.pdf)[siehe Hier]
 **Persönlichkeit**  Item orientiert am Big 5 Test der Uni Leipzig (https://leipzig-bfi2-60.formr.org/ , https://zis.gesis.org/skala/Danner-Rammstedt-Bluemke-Lechner-Berres-Knopf-Soto-John-Die-deutsche-Version-des-Big-Five-Inventory-2-(BFI-2)[siehe Hier]
 
 ## Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen:
