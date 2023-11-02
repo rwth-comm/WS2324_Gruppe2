@@ -10,6 +10,18 @@ Heinz, Andrea et al. (2023): Klimawandel und psychische Gesundheit. Positionspap
 Aeschbach, Vanessa (2023) Evidenzakkumulierung zur Bestimmung einer wirksamen Klimabildung: Eine Meta-Analyse. Freiburg: Pädagogische Hochschule.
 Metanalyse
 
+
+Warum ist die intention behaviour gap relevant für Untersuchungen des Klimawandels?
+Die intention behaviour bezieht sich auf einen bestehenden Unterschied zwischen dem, was Menschen denken/beabsichtigen und der Art und Weise wie sie tatsächlich Handeln (vgl. Hassan et. al 2014: 220).
+Nach einer Studie, die die Einstellung zu umweltbewusstem Handeln, in Bezug auf den Umgang mit elektronischen Müll, in Brasilien (unter Berücksichtigung der intention behaviour gap) untersucht, gibt es eine grundlegend positive Einstellung/Intention der Menschen zu dem umweltbewussten Umgang mit Elektromüll. (vgl. Echegaray/Hanstein 2017: 187).
+Allerdings konnte herausgefunden werden, es kam zu einem Unterschied zwischen der eigentlichen positiven Intention, zu dem umweltbewussten Umgang mit elektronischem Müll und dem tatsächlichen aktiven Entsorgungsverhalten in diesem Kontext. Dabei gibt es verschiedenste Faktoren, die das ganze negativ beeinflussen, wie zum Beispiel eine schlechte Bildung und oder ein niedriger sozialer Status(vgl. Echegaray/Hanstein 2017: 188).
+Aufgrund, dieser existierenden negativen Faktoren, die in Bezug auf das umweltschonende Verhalten und die ursprünglich positive Intention auftreten und einen nachteiligen Unterschied verdeutlichen, ist es somit von Relevanz, generell die Faktoren der intention behaviour gap, im Kontext von Umweltthematiken und somit auch im Kontext des thematisch ähnlichen Bereichs, des Klimawandels zu untersuchen.
+L.M. Hassan et. al (2014): Who Says There is an Intention–Behaviour Gap? Assessing the Empirical Evidence of an Intention–Behaviour Gap in Ethical Consumption. Berlin: Springer Science+Business Media Dordrecht.
+Who Says There is an Intention–Behaviour Gap? Assessing the Empirical Evidence of an Intention–Behaviour Gap in Ethical Consumption | SpringerLink
+Hanstein, Valeria Francesca/Echegaray Fabian (2017): Assessing the intention-behavior gap in electronic waste recycling: the case of Brazil. Shanghai: Journal of Cleaner Production.
+
+Assessing the intention-behavior gap in electronic waste recycling: the case of Brazil - ScienceDirect
+
 ---
 
 ```{r setup, include=FALSE}
