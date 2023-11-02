@@ -1,4 +1,4 @@
-# Akzeptanz von KI als Rechtsberatung
+# Verhaltensänderung beim Klimawandel
 
 ## Teammitglieder
 
@@ -8,13 +8,17 @@
 
 # Forschungsfrage
 
-Akzeptanz von **KI** als **Rechtsberatung** bei Laien
+Wie beeinflusst das **persönliche Bedrohungsempfinden** die
+**Bereitschaft zum Ergreifen** von Klimaschutzmaßnahmen?
+
+## Scopus-Recherche
+
+Abstract-Info
 
 ## Faktorenraum
 
 <figure>
-<img src="README.files/image_720.png"
-alt="Faktorenraum Rechtsberatung KI" />
-<figcaption aria-hidden="true">Faktorenraum Rechtsberatung
-KI</figcaption>
+<img src="README_files/figure-markdown_strict/Faktorenraum2.png"
+alt="Faktorenraum" />
+<figcaption aria-hidden="true">Faktorenraum</figcaption>
 </figure>
