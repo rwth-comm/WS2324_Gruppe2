@@ -23,9 +23,9 @@ alt="Faktorenraum" />
 <figcaption aria-hidden="true">Faktorenraum</figcaption>
 </figure>
 
-# Operationalisieren des Fragebogens/ der Items
+## Operationalisieren des Fragebogens/ der Items
 
-## Demografie
+### Demografie
 
 **Alter** nominaler Wert: Einfachantwort **Geschlecht** nominaler Wert:
 Auswahlmöglichkeit *m/w/d* **Bildungsabschluss** nominaler Wert:
@@ -40,7 +40,7 @@ max. Als deutscher durchschnitt vgl. Statistisches Bundesamt
 **Arbeitsstatus** nominaler Wert: Mehrfachauswahl *arbeitssuchend/
 Arbeitnehmer/ Arbeitgeber/ selbstständig*
 
-## Persönliches Bedrohungsempfinden: (latentes Merkmal/ Variable)
+### Persönliches Bedrohungsempfinden: (latentes Merkmal/ Variable)
 
 **Politische Orientierung** nominaler Wert: Item bestehend aus Rating/
 Likert-Skala \[5-stufig\] *Zustimmung/ Ablehnung von politischen
@@ -64,7 +64,7 @@ Hier\] **Persönlichkeit** Item orientiert am Big 5 Test der Uni Leipzig
 <https://zis.gesis.org/skala/Danner-Rammstedt-Bluemke-Lechner-Berres-Knopf-Soto-John-Die-deutsche-Version-des-Big-Five-Inventory-2-(BFI-2)%5Bsiehe>
 Hier\]
 
-## Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen:
+### Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen:
 
 **Mobilitätsverhalten** *verschiedene Items* Ranking bevorzugtes
 Verkehrsmittel, Mehrfachantwort Häufigkeit Nutzung, Zustimmung Statement
