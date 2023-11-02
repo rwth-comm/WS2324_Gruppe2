@@ -50,5 +50,5 @@ Abstract-Info
 * **Klimaschonende Ernährung**  _verschiedene Items_  nominal: Mehrfachantwort (vegan/ vegetraisch/ pesketarisch/ ich esse alles/ weiteres)  Mehrfachantwort, Statements Likert Skala (Herkunft, Produktion, Siegel, Haltungsart)
 * **Abfall- und Recyclingverhalten**  _verschiedene Items_  Statements, Likert-skala, (Themen: Second-hand, Müllvermeidung, Plastik, Wiederverwendung, Flaschen Recyclen  Kleidung (Herkunftsland, Masse, Inhalt)
 * **Klimaschonende Ressourcen**  _verschiedene Items_  nominal: Mehrfachantwort “ich heize mit...” (ÖL/ Gaß/ Fernwärme/ gar nicht/ Erdwärme/ Ofen-Kamin/ Paletts)  ordinal: Mehrfachantwort Beweggründe (kostentechnisch/ Klima/ Verfügbarkeit/ weiteres)  ordinal: Statements Likert-Skala zur Wassernutzung
-* **Soziales Anerkennungsbedürfnis (Erwünschtheitseffekt)**  _Mehrfachantwort, Likert-skala_ (https://zis.gesis.org/skala/Stock%C3%A9-Bed%C3%BCrfnis-nach-sozialer-Anerkennung) [siehe Hier]
-* **Wahrnehmung Klimaschutz**  _Likert-Skala zum Klimaschutz_ (https://zis.gesis.org/skala/Kals-Becker-Montada-Ittner-Trierer-Skalensystem-zum-Umweltschutz) [siehe Hier]
+* **Soziales Anerkennungsbedürfnis (Erwünschtheitseffekt)**  _Mehrfachantwort, Likert-skala_ [siehe Hier](https://zis.gesis.org/skala/Stock%C3%A9-Bed%C3%BCrfnis-nach-sozialer-Anerkennung)
+* **Wahrnehmung Klimaschutz**  _Likert-Skala zum Klimaschutz_ [siehe Hier](https://zis.gesis.org/skala/Kals-Becker-Montada-Ittner-Trierer-Skalensystem-zum-Umweltschutz)

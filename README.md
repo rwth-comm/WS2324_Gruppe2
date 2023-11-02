@@ -91,9 +91,7 @@ alt="Faktorenraum" />
     (kostentechnisch/ Klima/ Verfügbarkeit/ weiteres) ordinal:
     Statements Likert-Skala zur Wassernutzung
 -   **Soziales Anerkennungsbedürfnis (Erwünschtheitseffekt)**
-    *Mehrfachantwort, Likert-skala*
-    (<https://zis.gesis.org/skala/Stock%C3%A9-Bed%C3%BCrfnis-nach-sozialer-Anerkennung>)
-    \[siehe Hier\]
--   **Wahrnehmung Klimaschutz** *Likert-Skala zum Klimaschutz*
-    (<https://zis.gesis.org/skala/Kals-Becker-Montada-Ittner-Trierer-Skalensystem-zum-Umweltschutz>)
-    \[siehe Hier\]
+    *Mehrfachantwort, Likert-skala* [siehe
+    Hier](https://zis.gesis.org/skala/Stock%C3%A9-Bed%C3%BCrfnis-nach-sozialer-Anerkennung)
+-   **Wahrnehmung Klimaschutz** *Likert-Skala zum Klimaschutz* [siehe
+    Hier](https://zis.gesis.org/skala/Kals-Becker-Montada-Ittner-Trierer-Skalensystem-zum-Umweltschutz)
