@@ -55,21 +55,17 @@ alt="Faktorenraum" />
     Likert-Skala mit Statements Bsp.: “Ich konsumiere Inhalte zum Thema
     Klimawandel/ -Schutz”
 -   **Media Literacy** Ordinal: Mehrfachantwort, Likert-Skala Statements
-    -&gt; orientiert an
-    (<https://repositorio.ual.pt/bitstream/11144/3873/1/%5BCommunications%5D%20Measuring%20media%20and%20information%20literacy%20skills%20Construction%20of%20a%20test.pdf>)
-    \[diesem Messinstrument/ Text\]
+    -&gt; orientiert an [diesem Messinstrument/
+    Text](https://repositorio.ual.pt/bitstream/11144/3873/1/%5BCommunications%5D%20Measuring%20media%20and%20information%20literacy%20skills%20Construction%20of%20a%20test.pdf)
 -   **Miss-/ Vertrauen in die Wissenschaft** ordinal: *Item mit
-    5-stufiger Likert-Skala* orientiert an
-    (<https://www.wissenschaft-im-dialog.de/fileadmin/user_upload/Projekte/Wissenschaftsbarometer/Dokumente_22/Fragebogen_Wissenschaftsbarometer2022_CATI.pdf>)
-    \[diesem Messinstrument/ Text\]
+    5-stufiger Likert-Skala* orientiert an [diesem Messinstrument/
+    Text](https://www.wissenschaft-im-dialog.de/fileadmin/user_upload/Projekte/Wissenschaftsbarometer/Dokumente_22/Fragebogen_Wissenschaftsbarometer2022_CATI.pdf)
 -   **Internaler/externaler Kontrollfokus** ordinaler Wert: *Kurzskala
-    nach Kovaleva et al 2012*
-    (<https://www.gesis.org/fileadmin/kurzskalen/working_papers/IE4_Workingpaper.pdf>)
-    \[siehe Hier\]
--   **Persönlichkeit** Item orientiert am Big 5 Test der Uni Leipzig
-    (<https://leipzig-bfi2-60.formr.org/>) \[siehe Hier\] oder
-    (<https://zis.gesis.org/skala/Danner-Rammstedt-Bluemke-Lechner-Berres-Knopf-Soto-John-Die-deutsche-Version-des-Big-Five-Inventory-2-BFI-2>)
-    \[siehe Hier\]
+    nach Kovaleva et al. 2012* [siehe
+    Hier](https://www.gesis.org/fileadmin/kurzskalen/working_papers/IE4_Workingpaper.pdf)
+-   **Persönlichkeit** Item orientiert am Big 5 Test der [Uni
+    Leipzig](https://leipzig-bfi2-60.formr.org/) oder [siehe
+    Hier](https://zis.gesis.org/skala/Danner-Rammstedt-Bluemke-Lechner-Berres-Knopf-Soto-John-Die-deutsche-Version-des-Big-Five-Inventory-2-BFI-2)
 
 ### Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen:
 
