@@ -82,7 +82,7 @@ alt="Faktorenraum" />
     Wiederverwendung, Flaschen Recyclen Kleidung (Herkunftsland, Masse,
     Inhalt)
 -   **Klimaschonende Ressourcen** *verschiedene Items* nominal:
-    Mehrfachantwort “ich heize mit…” (ÖL/ Gaß/ Fernwärme/ gar nicht/
+    Mehrfachantwort “ich heize mit…” (ÖL/ Gas/ Fernwärme/ gar nicht/
     Erdwärme/ Ofen-Kamin/ Paletts) ordinal: Mehrfachantwort Beweggründe
     (kostentechnisch/ Klima/ Verfügbarkeit/ weiteres) ordinal:
     Statements Likert-Skala zur Wassernutzung
