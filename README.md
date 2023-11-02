@@ -1,5 +1,10 @@
-\#Verhaltensänderung beim Klimawandel \## Teammitglieder \* LC \* SP \*
-ZNB
+# Verhaltensänderung beim Klimawandel
+
+## Teammitglieder
+
+-   LC
+-   SP
+-   ZNB
 
 # Forschungsfrage
 

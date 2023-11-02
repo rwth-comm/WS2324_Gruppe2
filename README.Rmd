@@ -8,8 +8,7 @@ output: md_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-#Verhaltensänderung beim Klimawandel
+# Verhaltensänderung beim Klimawandel
 ## Teammitglieder
 * LC
 * SP
