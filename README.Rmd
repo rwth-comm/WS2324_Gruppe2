@@ -15,6 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 * LC
 * SP
 * ZNB
+* JK
 
 # Forschungsfrage
 Wie beeinflusst das **persönliche Bedrohungsempfinden** die **Bereitschaft zum Ergreifen** von Klimaschutzmaßnahmen?
