@@ -19,7 +19,7 @@ Abstract-Info
 ## Faktorenraum
 
 <figure>
-<img src="README_files/figure-markdown_strict/Faktorenraum3.png"
+<img src="README_files/figure-markdown_strict/Faktorenraum4.png"
 alt="Faktorenraum" />
 <figcaption aria-hidden="true">Faktorenraum</figcaption>
 </figure>

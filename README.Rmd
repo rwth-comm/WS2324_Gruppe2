@@ -24,7 +24,7 @@ Wie beeinflusst das **persönliche Bedrohungsempfinden** die **Bereitschaft zum 
 Abstract-Info
 
 ## Faktorenraum
-![Faktorenraum](README_files/figure-markdown_strict/Faktorenraum3.png)
+![Faktorenraum](README_files/figure-markdown_strict/Faktorenraum4.png)
 
 
 ## Operationalisieren des Fragebogens/ der Items
