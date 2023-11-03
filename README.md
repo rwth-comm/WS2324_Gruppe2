@@ -27,7 +27,7 @@ alt="Faktorenraum" />
 
 ### Demografie
 
--   **Alter** nominaler Wert: Einfachantwort
+-   **Alter** verhältnisskalierter Wert: Einfachantwort
 -   **Geschlecht** nominaler Wert: Auswahlmöglichkeit *m/w/d*
 -   **Bildungsabschluss** nominaler Wert: Auswahlmöglichkeit *Haupt-
     oder Realschulabschluss/ Ausbildung/ Meister/ (Fach-)Abitur/

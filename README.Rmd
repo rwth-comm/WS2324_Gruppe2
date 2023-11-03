@@ -29,7 +29,7 @@ Abstract-Info
 ## Operationalisieren des Fragebogens/ der Items
 
 ### Demografie
-* **Alter**  nominaler Wert: Einfachantwort
+* **Alter**  verhältnisskalierter Wert: Einfachantwort
 * **Geschlecht**  nominaler Wert: Auswahlmöglichkeit  _m/w/d_
 * **Bildungsabschluss**  nominaler Wert: Auswahlmöglichkeit  _Haupt- oder Realschulabschluss/ Ausbildung/ Meister/ (Fach-)Abitur/ Hochschulabschluss_
 * **Familienstand/ Kinder**  nominaler Wert: Mehrfachauswahl  _ledig/ verheiratet/ 1 Kind/ 2 Kinder/ 3 Kinder/ mehr als 3 Kinder/ geschieden_  Begründung: durchschn. Kinder 1,5, also 3 max. Als deutscher durchschnitt vgl. Statistisches Bundesamt
