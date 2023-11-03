@@ -53,3 +53,4 @@ Abstract-Info
 * **Klimaschonende Ressourcen**  _verschiedene Items_  nominal: Mehrfachantwort “ich heize mit...” (ÖL/ Gas/ Fernwärme/ gar nicht/ Erdwärme/ Ofen-Kamin/ Paletts)  ordinal: Mehrfachantwort Beweggründe (kostentechnisch/ Klima/ Verfügbarkeit/ weiteres)  ordinal: Statements Likert-Skala zur Wassernutzung
 * **Soziales Anerkennungsbedürfnis (Erwünschtheitseffekt)**  _Mehrfachantwort, Likert-skala_ [siehe Hier](https://zis.gesis.org/skala/Stock%C3%A9-Bed%C3%BCrfnis-nach-sozialer-Anerkennung)
 * **Wahrnehmung Klimaschutz**  _Likert-Skala zum Klimaschutz_ [siehe Hier](https://zis.gesis.org/skala/Kals-Becker-Montada-Ittner-Trierer-Skalensystem-zum-Umweltschutz)
+* **Bereitschaft zum Handeln** _Item nach Montada et al. 1999_ [siehe Hier](https://zis.gesis.org/skala/Montada-Kals-Becker-Umweltsch%C3%BCtzende-und-gef%C3%A4hrdende-Engagementbereitschaften)

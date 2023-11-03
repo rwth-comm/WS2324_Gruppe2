@@ -92,3 +92,5 @@ alt="Faktorenraum" />
     Hier](https://zis.gesis.org/skala/Stock%C3%A9-Bed%C3%BCrfnis-nach-sozialer-Anerkennung)
 -   **Wahrnehmung Klimaschutz** *Likert-Skala zum Klimaschutz* [siehe
     Hier](https://zis.gesis.org/skala/Kals-Becker-Montada-Ittner-Trierer-Skalensystem-zum-Umweltschutz)
+-   **Bereitschaft zum Handeln** *Item nach Montada et al. 1999* [siehe
+    Hier](https://zis.gesis.org/skala/Montada-Kals-Becker-Umweltsch%C3%BCtzende-und-gef%C3%A4hrdende-Engagementbereitschaften)
