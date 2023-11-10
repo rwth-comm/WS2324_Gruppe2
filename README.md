@@ -94,3 +94,33 @@ alt="Faktorenraum" />
     Hier](https://zis.gesis.org/skala/Kals-Becker-Montada-Ittner-Trierer-Skalensystem-zum-Umweltschutz)
 -   **Bereitschaft zum Handeln** *Item nach Montada et al. 1999* [siehe
     Hier](https://zis.gesis.org/skala/Montada-Kals-Becker-Umweltsch%C3%BCtzende-und-gef%C3%A4hrdende-Engagementbereitschaften)
+
+## Hypothesen
+
+-   **Zusammenhangshypothesen** “Es gibt einen Zusammenhang zwischen dem
+    persönlichen Bedrohungsempfinden und der Bereitschaft zum Ergreifen
+    von Klimaschutzmaßnahmen. (ungerichtete Korrelation)” “Je höher das
+    Konsumverhalten von Social-Media, desto höher ist das persönliche
+    Bedrohungsempfinden bezüglich des Klimawandels. (lineare
+    Regression)” “Es gibt einen Zusammenhang zwischen der politischen
+    Orientierung und der Bereitschaft zum Ergreifen von
+    Klimaschutzmaßnahmen.”
+
+-   Regression “Hoher Social-Media-Konsum und ein hohes persönliches
+    Bedrohungsempfinden sorgen für eine erhöhte Bereitschaft zum
+    Ergreifen von Klimaschutzmaßnahmen.”
+
+-   **Unterschiedshypothesen** “Das persönliche Bedrohungsempfinden
+    bezüglich des Klimawandels unterscheidet sich bei Personen mit hohem
+    und niedrigem Medienkonsum. (einfacher Unterschied)” “Die
+    Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen unterscheidet
+    sich bei Personen mit veganem oder vegetarischen Ernährungsverhalten
+    im Gegensatz zu Personen mit uneingeschränktem Ernährungsverhalten.”
+    “Das persönliche Bedrohungsempfinden bezüglich des Klimawandels
+    unterscheidet sich bei Personen mit linker politischer Orientierung
+    und bei Personen mit rechter politischer Orientierung.”
+
+-   **MANCOVA** “Geschlecht, Wohnort und Ernährungsform haben bei
+    kontrollierten Alterseinfluss einen Einfluss auf das persönliche
+    Bedrohungsempfinden und auf die Bereitschaft zum Ergreifen von
+    Klimaschutzmaßnahmen.”
