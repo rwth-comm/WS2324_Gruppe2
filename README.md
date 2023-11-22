@@ -97,41 +97,55 @@ alt="Faktorenraum" />
 
 ## Hypothesen
 
-**Zusammenhangshypothesen** \* “Es gibt einen Zusammenhang zwischen dem
-persönlichen Bedrohungsempfinden und der Bereitschaft zum Ergreifen von
-Klimaschutzmaßnahmen. (ungerichtete Korrelation)” \* “Je häufiger
-Social-Media konsumiert wird, desto höher ist das persönliche
-Bedrohungsempfinden bezüglich des Klimawandels. (lineare Regression)” \*
-“Es gibt einen Zusammenhang zwischen der politischen Orientierung und
-der Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen.”
+**Zusammenhangshypothesen**
+
+-   “Es gibt einen Zusammenhang zwischen dem persönlichen
+    Bedrohungsempfinden und der Bereitschaft zum Ergreifen von
+    Klimaschutzmaßnahmen. (ungerichtete Korrelation)”
+
+-   “Je häufiger Social-Media konsumiert wird, desto höher ist das
+    persönliche Bedrohungsempfinden bezüglich des Klimawandels. (lineare
+    Regression)”
+
+-   “Es gibt einen Zusammenhang zwischen der politischen Orientierung
+    und der Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen.”
 
 **Feedback JRH:** Bei politischer Orientierung könnte man eine
 Regressionshypothese aufstellen mit der Sympathie gegenüber jeder Partei
 als UVs.
 
-**Regression** \* “Hoher Social-Media-Konsum und ein hohes persönliches
-Bedrohungsempfinden sorgen für eine erhöhte Bereitschaft zum Ergreifen
-von Klimaschutzmaßnahmen.”
+**Regression**
 
-**Unterschiedshypothesen** \* “Das persönliche Bedrohungsempfinden
-bezüglich des Klimawandels unterscheidet sich bei Personen mit hohem und
-niedrigem Medienkonsum. (einfacher Unterschied)” \* “Die Bereitschaft
-zum Ergreifen von Klimaschutzmaßnahmen unterscheidet sich bei Personen
-mit veganem oder vegetarischem Ernährungsverhalten im Gegensatz zu
-Personen mit uneingeschränktem Ernährungsverhalten.” \* “Das persönliche
-Bedrohungsempfinden bezüglich des Klimawandels unterscheidet sich bei
-Personen mit linker politischer Orientierung und bei Personen mit
-rechter politischer Orientierung.”
+-   “Hoher Social-Media-Konsum und ein hohes persönliches
+    Bedrohungsempfinden sorgen für eine erhöhte Bereitschaft zum
+    Ergreifen von Klimaschutzmaßnahmen.”
+
+**Unterschiedshypothesen**
+
+-   “Das persönliche Bedrohungsempfinden bezüglich des Klimawandels
+    unterscheidet sich bei Personen mit hohem und niedrigem
+    Medienkonsum. (einfacher Unterschied)”
+
+-   “Die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen
+    unterscheidet sich bei Personen mit veganem oder vegetarischem
+    Ernährungsverhalten im Gegensatz zu Personen mit uneingeschränktem
+    Ernährungsverhalten.”
+
+-   “Das persönliche Bedrohungsempfinden bezüglich des Klimawandels
+    unterscheidet sich bei Personen mit linker politischer Orientierung
+    und bei Personen mit rechter politischer Orientierung.”
 
 **Feedback JRH:** In der ersten Unterschiedshypothese handelt es sich um
 einen unverbundenen T-Test, nicht um einen einfachen. Die dritte
 Hypothese ist nicht ganz präzise. Meinen Sie vielleicht, dass sich das
 Bedrohungsempfinden zwischen den beiden Gruppen unterscheidet?
 
-**MANCOVA** \* “Geschlecht, Wohnort und Ernährungsform haben bei
-kontrolliertem Alterseinfluss einen Einfluss auf das persönliche
-Bedrohungsempfinden und auf die Bereitschaft zum Ergreifen von
-Klimaschutzmaßnahmen.”
+**MANCOVA**
+
+-   “Geschlecht, Wohnort und Ernährungsform haben bei kontrolliertem
+    Alterseinfluss einen Einfluss auf das persönliche
+    Bedrohungsempfinden und auf die Bereitschaft zum Ergreifen von
+    Klimaschutzmaßnahmen.”
 
 **Feedback JRH:** Bitte den Begriff “Mehrfachauswahl” bei der
 Operationalisierung nochmal überdenken.
