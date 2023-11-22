@@ -99,23 +99,19 @@ alt="Faktorenraum" />
 
 **Zusammenhangshypothesen** \* “Es gibt einen Zusammenhang zwischen dem
 persönlichen Bedrohungsempfinden und der Bereitschaft zum Ergreifen von
-Klimaschutzmaßnahmen. (ungerichtete Korrelation)” \* “Je höher das
-Konsumverhalten von Social-Media, desto höher ist das persönliche
+Klimaschutzmaßnahmen. (ungerichtete Korrelation)” \* “Je häufiger
+Social-Media konsumiert wird, desto höher ist das persönliche
 Bedrohungsempfinden bezüglich des Klimawandels. (lineare Regression)” \*
 “Es gibt einen Zusammenhang zwischen der politischen Orientierung und
 der Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen.”
 
-**Feedback JRH:** Konsumverhalten und politische Orientierung können
-nicht hoch oder niedrig sein. Bei Konsumverhalten ist es vielleicht
-besser Nutzungshäufigkeit zu verwenden. Bei politischer Orientierung
-könnte man eine Regressionshypothese aufstellen mit der Sympathie
-gegenüber jeder Partei als UVs.
+**Feedback JRH:** Bei politischer Orientierung könnte man eine
+Regressionshypothese aufstellen mit der Sympathie gegenüber jeder Partei
+als UVs.
 
 **Regression** \* “Hoher Social-Media-Konsum und ein hohes persönliches
 Bedrohungsempfinden sorgen für eine erhöhte Bereitschaft zum Ergreifen
 von Klimaschutzmaßnahmen.”
-
-**Feedback JRH:** Das funktioniert :-) Super!
 
 **Unterschiedshypothesen** \* “Das persönliche Bedrohungsempfinden
 bezüglich des Klimawandels unterscheidet sich bei Personen mit hohem und
@@ -137,7 +133,5 @@ kontrolliertem Alterseinfluss einen Einfluss auf das persönliche
 Bedrohungsempfinden und auf die Bereitschaft zum Ergreifen von
 Klimaschutzmaßnahmen.”
 
-**Feedback JRH:** Sehr gut! Passt sehr gut zu ihrer ersten
-Zusammenhangshypothese, da für die MANCOVA die beiden AVs korrelieren
-müssen. Sehr schön :-) Bitte den Begriff “Mehrfachauswahl” bei der
+**Feedback JRH:** Bitte den Begriff “Mehrfachauswahl” bei der
 Operationalisierung nochmal überdenken.
