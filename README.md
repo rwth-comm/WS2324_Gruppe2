@@ -102,7 +102,7 @@ alt="Faktorenraum" />
 -   “Es gibt einen Zusammenhang zwischen dem persönlichen
     Bedrohungsempfinden und der Bereitschaft zum Ergreifen von
     Klimaschutzmaßnahmen. (ungerichtete Korrelation)”
--   “Je höher das Konsumverhalten von Social-Media, desto höher ist das
+-   “Je häufiger Social-Media konsumiert wird, desto höher ist das
     persönliche Bedrohungsempfinden bezüglich des Klimawandels. (lineare
     Regression)”
 -   “Es gibt einen Zusammenhang zwischen der politischen Orientierung
