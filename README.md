@@ -176,7 +176,7 @@ alt="Faktorenraum" />
 
 **MANCOVA**
 
--   “Geschlecht, Wohnort und Ernährungsform haben bei kontrolliertem
-    Alterseinfluss einen Einfluss auf das persönliche
+-   “Geschlecht, Wohnort und Mobilitätsverhalten haben bei
+    kontrolliertem Alterseinfluss einen Einfluss auf das persönliche
     Bedrohungsempfinden und auf die Bereitschaft zum Ergreifen von
     Klimaschutzmaßnahmen.”

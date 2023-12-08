@@ -99,5 +99,5 @@ pwr:: pwr.r.test(n= 140, r= NULL, sig.level= 0.05, power=0.8 )
 
 **MANCOVA**
 
-* "Geschlecht, Wohnort und Ernährungsform haben bei kontrolliertem Alterseinfluss einen Einfluss auf das persönliche Bedrohungsempfinden und auf die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen."
+* "Geschlecht, Wohnort und Mobilitätsverhalten haben bei kontrolliertem Alterseinfluss einen Einfluss auf das persönliche Bedrohungsempfinden und auf die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen."
  
