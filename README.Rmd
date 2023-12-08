@@ -22,3 +22,21 @@ Abstract-Info
 
 ## Faktorenraum
 ![Faktorenraum](README_files/figure-markdown_strict/Faktorenraum2.png)
+
+```{r}
+
+
+# n fehlt:
+pwr:: pwr.r.test(n= NULL, r= 0.1, sig.level= 0.05, power = 0.8)
+# n fehlt:
+pwr:: pwr.r.test(n= NULL, r= 0.3, sig.level= 0.05, power = 0.8)
+# n fehlt:
+pwr:: pwr.r.test(n= NULL, r= 0.5, sig.level= 0.05, power = 0.8)
+
+# r fehlt 
+pwr:: pwr.r.test(n= 140, r= NULL, sig.level= 0.05, power=0.8 )
+
+
+
+
+```
