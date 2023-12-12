@@ -1,35 +1,4 @@
 variable;variable_old;item;text;info
-Duration (in seconds);Duration (in seconds);NA;Dauer (in Sekunden);"{""ImportId"":""duration""}"
-ResponseId;ResponseId;NA;Antwort-ID;"{""ImportId"":""_recordId""}"
-Teilnahmebedingungen;Teilnahmebedingungen;NA;"Vielen Dank, dass Sie unsere Befragung unterstützen. Wir untersuchen, was Menschen dazu bringt, ihr Verhalten zu ändern. Dabei geht es um Verhalten im Kontext des Klimawandels.
-
- 
-
-Die Befragung besteht aus Fragen zu Ihrem Verhalten und Ihren Einstellungen. Bitte füllen Sie die Umfrage vollständig aus. Dabei gibt es keine falschen oder richtigen Antworten. Es ist nur Ihre persönliche Meinung gefragt. Die gesamte Umfrage dauert etwa 15 bis 20 Minuten.
-
- 
-
-Die Teilnahme an der Befragung ist freiwillig. Sie können jederzeit während dem Ausfüllen von der Teilnahme zurücktreten, indem Sie den Browser-Tab mit der Umfrage schließen. Nach abgeschlossener Teilnahme sind aus den Daten keine Rückschlüsse auf Ihre Person möglich. Die Daten werden zeitlich unbegrenzt und verschlüsselt auf sicheren Datenträgern gespeichert und unterliegen dem deutschen Bundesdatenschutzgesetz. Sie werden anonymisiert gespeichert und ausgewertet. Zugriff haben nur der Studienleiter und die Projektmitarbeitenden. Da die Erhebung anonym ist, ist es nicht möglich, die Daten nachträglich zu löschen. Um an der Umfrage teilzunehmen, müssen Sie volljährig sein.
-
- 
-
-Bei Rückfragen wenden Sie sich bitte an hildebrandt@comm.rwth-aachen.de
-
- 
-
-Studienleiter:
-
-Julian Romeo Hildebrandt, M.Sc., M.A.Laura Halbey, M.A.
-
-Lehrstuhl für Communication Science
-
-Campus-Boulevard 57
-
-52074 Aachen
-
- 
-
-Wenn Sie möchten, können Sie sich diese Informationen hier für Ihre Unterlagen ausdrucken.";"{""ImportId"":""QID149""}"
 age;age;NA;"Wie alt
   sind Sie (in Jahren)?";"{""ImportId"":""QID1_TEXT""}"
 gender;gender;Selected Choice;Welches Geschlecht haben Sie? - Selected Choice;"{""ImportId"":""QID2""}"
@@ -55,28 +24,6 @@ SM1_5;SM1_5;LinkedIn;Wie oft nutzen Sie die folgenden sozialen Netzwerke? - Link
 SM1_6;SM1_6;Twitter / X;Wie oft nutzen Sie die folgenden sozialen Netzwerke? - Twitter / X;"{""ImportId"":""QID311_7""}"
 SM1_7;SM1_7;Sonstige (bitte angeben);Wie oft nutzen Sie die folgenden sozialen Netzwerke? - Sonstige (bitte angeben);"{""ImportId"":""QID311_6""}"
 SM1_7_TEXT;SM1_7_TEXT;Sonstige (bitte angeben) – Text;Wie oft nutzen Sie die folgenden sozialen Netzwerke? - Sonstige (bitte angeben) – Text;"{""ImportId"":""QID311_6_TEXT""}"
-SM2_1;SM2_1;... als Informationsquelle;"Inwiefern stimmen Sie den folgenden Aussagen zu ihrem Onlineverhalten zu?
-
-Ich nutze Social Media hauptsächlich... - ... als Informationsquelle";"{""ImportId"":""QID312_1""}"
-SM2_2;SM2_2;... zu Unterhaltungszwecken;"Inwiefern stimmen Sie den folgenden Aussagen zu ihrem Onlineverhalten zu?
-
-Ich nutze Social Media hauptsächlich... - ... zu Unterhaltungszwecken";"{""ImportId"":""QID312_2""}"
-SM2_3;SM2_3;... als Verbindung zu Freunden und Familie;"Inwiefern stimmen Sie den folgenden Aussagen zu ihrem Onlineverhalten zu?
-
-Ich nutze Social Media hauptsächlich... - ... als Verbindung zu Freunden und Familie";"{""ImportId"":""QID312_3""}"
-SM2_4;SM2_4;... im Rahmen von sozialem Engagement;"Inwiefern stimmen Sie den folgenden Aussagen zu ihrem Onlineverhalten zu?
-
-Ich nutze Social Media hauptsächlich... - ... im Rahmen von sozialem Engagement";"{""ImportId"":""QID312_4""}"
-SM2_5;SM2_5;... für Aktivismus;"Inwiefern stimmen Sie den folgenden Aussagen zu ihrem Onlineverhalten zu?
-
-Ich nutze Social Media hauptsächlich... - ... für Aktivismus";"{""ImportId"":""QID312_5""}"
-SM2_6;SM2_6;Sonstiges (bitte angeben);"Inwiefern stimmen Sie den folgenden Aussagen zu ihrem Onlineverhalten zu?
-
-Ich nutze Social Media hauptsächlich... - Sonstiges (bitte angeben)";"{""ImportId"":""QID312_6""}"
-SM2_6_TEXT;SM2_6_TEXT;Sonstiges (bitte angeben) – Text;"Inwiefern stimmen Sie den folgenden Aussagen zu ihrem Onlineverhalten zu?
-
-Ich nutze Social Media hauptsächlich... - Sonstiges (bitte angeben) – Text";"{""ImportId"":""QID312_6_TEXT""}"
-SM3;SM3;NA;Social Media beeinflusst mich in meiner Meinungsbildung.;"{""ImportId"":""QID313""}"
 CCS1;CCS1;NA;"Was
   beschreibt Ihre Ernährungsform am besten?";"{""ImportId"":""QID151""}"
 CCS2;CCS2;NA;Wenn es um das Thema Autobesitz geht, was trifft am ehesten auf Sie zu?;"{""ImportId"":""QID152""}"
@@ -103,41 +50,6 @@ like_transport_6;like_transport_6;Bahn (S-Bahn, Regionalbahn, Fernferkehr);"Ange
 Bitte bilden Sie eine Rangfolge, welche Verkehrsmittel Sie am liebsten wählen würden. - Bahn (S-Bahn, Regionalbahn, Fernferkehr)";"{""ImportId"":""QID320_6""}"
 like_transport_7;like_transport_7;Taxi;"Angenommen, Ihnen würden alle der folgenden Verkehrsmittel zur freien Verfügung stehen.
 Bitte bilden Sie eine Rangfolge, welche Verkehrsmittel Sie am liebsten wählen würden. - Taxi";"{""ImportId"":""QID320_7""}"
-BFE1;BFE1;NA;Ich bin eher ruhig.;"{""ImportId"":""QID156""}"
-BFA1;BFA1;NA;Ich bin einfühlsam, warmherzig.;"{""ImportId"":""QID157""}"
-BFC1;BFC1;NA;Ich bin eher unordentlich.;"{""ImportId"":""QID158""}"
-BFN1;BFN1;NA;"Ich
-  mache mir oft Sorgen.";"{""ImportId"":""QID159""}"
-BFO1;BFO1;NA;"Ich kann mich für Kunst, Musik
-  und Literatur begeistern.";"{""ImportId"":""QID160""}"
-BFE2;BFE2;NA;"Ich
-  neige dazu, die Führung zu übernehmen.";"{""ImportId"":""QID161""}"
-BFA2;BFA2;NA;"Ich bin manchmal unhöflich und
-  schroff.";"{""ImportId"":""QID162""}"
-BFC2;BFC2;NA;"Ich
-  neige dazu, Aufgaben vor mir herzuschieben.";"{""ImportId"":""QID163""}"
-BFN2;BFN2;NA;"Ich bin oft deprimiert,
-  niedergeschlagen.";"{""ImportId"":""QID164""}"
-BFO2;BFO2;NA;"Mich
-  interessieren abstrakte Überlegungen wenig.";"{""ImportId"":""QID165""}"
-BFA3;BFA3;NA;"Ich
-  schenke anderen leicht Vertrauen, glaube an das Gute im Menschen.";"{""ImportId"":""QID254""}"
-BFE3;BFE3;NA;"Ich bin voller Energie und
-  Tatendrang.";"{""ImportId"":""QID253""}"
-BFC3;BFC3;NA;"Ich bin verlässlich, auf mich
-  kann man zählen.";"{""ImportId"":""QID255""}"
-BFN3;BFN3;NA;"Ich bin
-  ausgeglichen, nicht leicht aus der Ruhe zu bringen.";"{""ImportId"":""QID256""}"
-BFO3;BFO3;NA;"Ich bin originell, entwickle
-  neue Ideen.";"{""ImportId"":""QID257""}"
-IC1;IC1;NA;"Ich habe
-  mein Leben selbst in der Hand.";"{""ImportId"":""QID237""}"
-IC2;IC2;NA;"Wenn ich mich anstrenge, werde
-  ich auch Erfolg haben.";"{""ImportId"":""QID238""}"
-EC1;EC1;NA;"Egal ob
-  privat oder im Beruf: Mein Leben wird zum großen Teil von anderen bestimmt.";"{""ImportId"":""QID239""}"
-EC2;EC2;NA;"Meine Pläne werden oft vom
-  Schicksal durchkreuzt.";"{""ImportId"":""QID240""}"
 CCBI1;CCBI1;NA;"Ich plane, den Konsum tierischer Produkte wie
   Fleisch, Milch oder Eier (weiterhin) zu vermeiden.";"{""ImportId"":""QID75""}"
 CCBI5;CCBI5;NA;Ich plane, (weiterhin) bewusst im Haushalt Ressourcen in Form von Wasser einzusparen.;"{""ImportId"":""QID307""}"
@@ -147,36 +59,6 @@ CCBI3;CCBI3;NA;Ich plane, (weiterhin) Fahrten mit dem Auto zu vermeiden.;"{""Imp
 CCBI4;CCBI4;NA;"Allgemein plane ich, (weiterhin) Maßnahmen zum Klimaschutz zu
   ergreifen.";"{""ImportId"":""QID261""}"
 CCBI6;CCBI6;NA;Ich plane, Wertstoffe (Papier, Glas, Aluminium usw.) immer zu entsprechenden Recycling-Vorrichtungen zu bringen.;"{""ImportId"":""QID309""}"
-CCSKN;CCSKN;NA;Wie schätzen Sie Ihren Wissensstand über den Klimawandel ein?;"{""ImportId"":""QID285""}"
-CCKN1;CCKN1;NA;Der heutige weltweite CO2-Wert in der Atmosphäre ist in den letzten 650.000 Jahren bereits vorgekommen.;"{""ImportId"":""QID144""}"
-CCKN2;CCKN2;NA;Trotz seiner sehr geringen Konzentration in der Atmosphäre trägt Lachgas zum anthropogenen Treibhauseffekt etwa 6 % bei, da seine Wirkung als Treibhausgas 298-mal stärker ist als die von CO2.;"{""ImportId"":""QID91""}"
-CCKN3;CCKN3;NA;CO2 verweilt in der Regel zwischen 10 und 20 Jahren in der Atmosphäre.;"{""ImportId"":""QID92""}"
-CCKN4;CCKN4;NA;Die Erde befindet sich etwa seit 1850, also etwa seit dem Beginn der industriellen Revolution, in einer Phase der Wiedererwärmung aus der kleinen Eiszeit.;"{""ImportId"":""QID141""}"
-CCKN5;CCKN5;NA;"Das Ozonloch ist
-  eine der wesentlichen Ursachen der globalen Erwärmung.";"{""ImportId"":""QID272""}"
-CCKN6;CCKN6;NA;"Große
-  Vulkanausbrüche verstärken die globale Erwärmung maßgeblich.";"{""ImportId"":""QID273""}"
-CCDI1;CCDI1;NA;"Wissenschaftler*innen,
-  die den Klimawandel erforschen, sind mehr an ihrem eigenen Fortkommen interessiert
-  als am Wohlergehen der Menschen.";"{""ImportId"":""QID58""}"
-CCDI2;CCDI2;NA;"Die Klimaforschung handelt
-  im Interesse der Menschheit.";"{""ImportId"":""QID59""}"
-CCDI3;CCDI3;NA;"Die
-  Klimaforschung interessiert sich nicht für das Wohlergehen der Menschheit";"{""ImportId"":""QID60""}"
-CCDI4;CCDI4;NA;"Wenn es um das Thema
-  Klimawandel geht, sind Wissenschaftler*innen grundsätzlich kompetent.";"{""ImportId"":""QID177""}"
-CCDI5;CCDI5;NA;"Es ist
-  fraglich, wie gut Wissenschaftler*innen darin sind, den Klimawandel zu
-  erforschen.";"{""ImportId"":""QID176""}"
-CCDI6;CCDI6;NA;"Die wissenschaftlichen Theorien
-  und Empfehlungen zum Thema Klimawandel sind zweifelhaft.";"{""ImportId"":""QID175""}"
-CCDI7;CCDI7;NA;"Wissenschaftler*innen,
-  die den Klimawandel erforschen, ignorieren Ergebnisse, die ihrer eigenen Arbeit
-  widersprechen.";"{""ImportId"":""QID174""}"
-CCDI8;CCDI8;NA;"Wissenschaftliche Forschung zum
-  Klimawandel ist oft voreingenommen.";"{""ImportId"":""QID173""}"
-CCDI9;CCDI9;NA;"In Bezug auf den
-  Klimawandel ist die Wissenschaft ehrlich.";"{""ImportId"":""QID172""}"
 CCTB1;CCTB1;NA;"Im Laufe
   meines Lebens werde ich von den negativen Folgen des Klimawandels betroffen sein.";"{""ImportId"":""QID94""}"
 CCTB2;CCTB2;NA;"Der Klimawandel hat auf mein
@@ -187,45 +69,8 @@ CCTB4;CCTB4;NA;"Der Klimawandel ist eine der
   größten Herausforderungen der Menschheit.";"{""ImportId"":""QID183""}"
 CCTB5;CCTB5;NA;"Der
   Klimawandel hat weitreichende negative Auswirkungen.";"{""ImportId"":""QID182""}"
-CCRB1;CCRB1;NA;"Ich bin in der Lage, den Konsum
-  tierischer Produkte wie Fleisch, Milch oder Eier zu vermeiden.";"{""ImportId"":""QID190""}"
-CCRB2;CCRB2;NA;Ich bin in der Lage, bewusst weniger zu heizen.;"{""ImportId"":""QID193""}"
-CCRB3;CCRB3;NA;"Ich bin in der Lage, Fahrten mit
-  dem Auto zu vermeiden.";"{""ImportId"":""QID241""}"
-CCRB4;CCRB4;NA;"Den Konsum tierischer Produkte zu
-  vermeiden ist wirksam.";"{""ImportId"":""QID191""}"
-CCRB5;CCRB5;NA;"Weniger zu heizen ist
-  wirksam.";"{""ImportId"":""QID194""}"
-CCRB6;CCRB6;NA;"Autofahren zu vermeiden ist
-  wirksam.";"{""ImportId"":""QID242""}"
-CCRB7;CCRB7;NA;"Wenn ich den Konsum tierischer
-  Produkte vermeide, ist das für mich mit hohen zeitlichen, finanziellen
-  und/oder emotionalen Kosten verbunden.";"{""ImportId"":""QID192""}"
-CCRB8;CCRB8;NA;"Weniger zu heizen ist für
-  mich mit hohen zeitlichen, finanziellen und/oder emotionalen Kosten
-  verbunden.";"{""ImportId"":""QID195""}"
-CCRB9;CCRB9;NA;"Wenn ich Autofahren vermeide, ist
-  das für mich mit hohen zeitlichen, finanziellen und/oder emotionalen Kosten
-  verbunden.";"{""ImportId"":""QID243""}"
-CCRB10;CCRB10;NA;"Ich bin in der Lage, Maßnahmen für
-  den Klimaschutz zu ergreifen.";"{""ImportId"":""QID105""}"
-CCRB11;CCRB11;NA;"Klimaschutzmaßnahmen durch
-  Einzelpersonen sind wirksam.";"{""ImportId"":""QID106""}"
-CCRB12;CCRB12;NA;"Klimaschutzmaßnahmen sind für mich
-  mit hohen zeitlichen, finanziellen und/oder emotionalen Kosten verbunden.";"{""ImportId"":""QID107""}"
-CCPN1;CCPN1;NA;"Ich habe eine moralische
-  Verpflichtung, etwas gegen den Klimawandel zu tun.";"{""ImportId"":""QID119""}"
-CCPN2;CCPN2;NA;Ich finde, dass ich zum Klimaschutz beitragen sollte.;"{""ImportId"":""QID120""}"
-CCPN3;CCPN3;NA;Ich finde es wichtig, dass alle Menschen das Klima schützen.;"{""ImportId"":""QID125""}"
-CCIN1;CCIN1;NA;"Meine
-  Freund*innen finden, ich sollte mich klimafreundlich verhalten.";"{""ImportId"":""QID121""}"
-CCIN2;CCIN2;NA;Meine Familie findet, ich sollte mich klimafreundlich verhalten.;"{""ImportId"":""QID123""}"
-CCIN3;CCIN3;NA;Meine Kolleg*innen finden, ich sollte mich klimafreundlich verhalten.;"{""ImportId"":""QID196""}"
-CCIN4;CCIN4;NA;Menschen, die mir wichtig sind, finden, dass ich mich klimafreundlich verhalten sollte.;"{""ImportId"":""QID298""}"
-CCDN1;CCDN1;NA;Meine Freunde ergreifen Maßnahmen zum Klimaschutz.;"{""ImportId"":""QID295""}"
-CCDN2;CCDN2;NA;Meine Familie ergreift Maßnahmen zum Klimaschutz.;"{""ImportId"":""QID296""}"
-CCDN3;CCDN3;NA;Meine Kolleg*innen ergreifen Maßnahmen zum Klimaschutz.;"{""ImportId"":""QID297""}"
-CCDN4;CCDN4;NA;Die Menschen, die mir wichtig sind, ergreifen Maßnahmen zum Klimaschutz.;"{""ImportId"":""QID300""}"
+CCTB6;CCTB6;NA;"Es macht mir Angst, an den
+  Klimawandel zu denken.";"{""ImportId"":""QID181""}"
 orientation1_1;orientation1_1;SPD;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - SPD;"{""ImportId"":""QID314_1""}"
 orientation1_2;orientation1_2;CDU / CSU;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - CDU / CSU;"{""ImportId"":""QID314_2""}"
 orientation1_3;orientation1_3;Bündnis 90 / Grüne;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - Bündnis 90 / Grüne;"{""ImportId"":""QID314_3""}"
@@ -244,5 +89,3 @@ activism2;activism2;NA;Sind Sie in einer Klimaschutzbewegung aktiv, z.B. Fridays
 sciencescepticism_1;sciencescepticism_1;Wissenschaft und Technik werden viele Umweltprobleme lösen, ohne dass wir unsere Lebensweise ändern müssen;Bitte bewerten Sie die folgenden Aussagen - Wissenschaft und Technik werden viele Umweltprobleme lösen, ohne dass wir unsere Lebensweise ändern müssen;"{""ImportId"":""QID318_1""}"
 sciencescepticism_2;sciencescepticism_2;Wir vertrauen zu sehr der Wissenschaft und der Technik und zu wenig unseren Gefühlen;Bitte bewerten Sie die folgenden Aussagen - Wir vertrauen zu sehr der Wissenschaft und der Technik und zu wenig unseren Gefühlen;"{""ImportId"":""QID318_2""}"
 sciencescepticism_3;sciencescepticism_3;Das meiste, was Wissenschaft und Technik hervorgebracht haben, schadet der Umwelt;Bitte bewerten Sie die folgenden Aussagen - Das meiste, was Wissenschaft und Technik hervorgebracht haben, schadet der Umwelt;"{""ImportId"":""QID318_3""}"
-Anmerkungen;Anmerkungen;NA;Haben Sie weitere Anmerkungen?;"{""ImportId"":""QID134_TEXT""}"
-gid;gid;NA;gid;"{""ImportId"":""gid""}"
