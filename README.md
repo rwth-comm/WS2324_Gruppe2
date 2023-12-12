@@ -24,24 +24,71 @@ alt="Faktorenraum" />
 <figcaption aria-hidden="true">Faktorenraum</figcaption>
 </figure>
 
+    # n fehlt:
+    pwr:: pwr.r.test(n= NULL, r= 0.1, sig.level= 0.05, power = 0.8)
+
+    ## 
+    ##      approximate correlation power calculation (arctangh transformation) 
+    ## 
+    ##               n = 781.7516
+    ##               r = 0.1
+    ##       sig.level = 0.05
+    ##           power = 0.8
+    ##     alternative = two.sided
+
+    # n fehlt:
+    pwr:: pwr.r.test(n= NULL, r= 0.3, sig.level= 0.05, power = 0.8)
+
+    ## 
+    ##      approximate correlation power calculation (arctangh transformation) 
+    ## 
+    ##               n = 84.07364
+    ##               r = 0.3
+    ##       sig.level = 0.05
+    ##           power = 0.8
+    ##     alternative = two.sided
+
+    # n fehlt:
+    pwr:: pwr.r.test(n= NULL, r= 0.5, sig.level= 0.05, power = 0.8)
+
+    ## 
+    ##      approximate correlation power calculation (arctangh transformation) 
+    ## 
+    ##               n = 28.24841
+    ##               r = 0.5
+    ##       sig.level = 0.05
+    ##           power = 0.8
+    ##     alternative = two.sided
+
+    # r fehlt 
+    pwr:: pwr.r.test(n= 140, r= NULL, sig.level= 0.05, power=0.8 )
+
+    ## 
+    ##      approximate correlation power calculation (arctangh transformation) 
+    ## 
+    ##               n = 140
+    ##               r = 0.234161
+    ##       sig.level = 0.05
+    ##           power = 0.8
+    ##     alternative = two.sided
+
 ## Operationalisieren des Fragebogens/ der Items
 
 ### Demografie
 
 -   **Alter** verhältnisskalierter Wert: Einfachantwort
--   **Geschlecht** nominaler Wert: Auswahlmöglichkeit *m/w/d*
+-   **Geschlecht** nominaler Wert: Single Choice *m/w/d*
 -   **Bildungsabschluss** nominaler Wert: Auswahlmöglichkeit *Haupt-
     oder Realschulabschluss/ Ausbildung/ Meister/ (Fach-)Abitur/
     Hochschulabschluss*
--   **Familienstand/ Kinder** nominaler Wert: Mehrfachauswahl *ledig/
+-   **Familienstand/ Kinder** nominaler Wert: Single-Choice *ledig/
     verheiratet/ 1 Kind/ 2 Kinder/ 3 Kinder/ mehr als 3 Kinder/
     geschieden* Begründung: durchschn. Kinder 1,5, also 3 max. Als
     deutscher durchschnitt vgl. Statistisches Bundesamt
--   **Einkommen/Haushaltseinkommen** intervall Wert: Mehrfachauswahl
-    *&lt; 1000€, 1000-2000 €, 2000-3000€, 3000-4000€, 4000-5000€, &gt;
-    5000€*
--   **Wohnort** nominaler Wert: Mehrfachauswahl *Stadt/ Vorort/ Land*
--   **Arbeitsstatus** nominaler Wert: Mehrfachauswahl *arbeitssuchend/
+-   **Einkommen/Haushaltseinkommen** intervall Wert: Single-Choice *&lt;
+    1000€, 1000-2000 €, 2000-3000€, 3000-4000€, 4000-5000€, &gt; 5000€*
+-   **Wohnort** nominaler Wert: Single-Choice *Stadt/ Vorort/ Land*
+-   **Arbeitsstatus** nominaler Wert: Single-Choice *arbeitssuchend/
     Arbeitnehmer/ Arbeitgeber/ selbstständig*
 
 ### Persönliches Bedrohungsempfinden: (latentes Merkmal/ Variable)
@@ -51,11 +98,11 @@ alt="Faktorenraum" />
     politischen Statements* Bsp.: “Reiche sollten mehr besteuert werden”
 -   **Mediennutzung/–Konsum** ordinal: verschiedene Items
     *Item-Medienkonsum* (Häufigkeit) *Rangliste Item-Medienkonsum* -&gt;
-    Mehrfachantwort, Likert-Skala (mehrfach die Woche, einmal …)
-    *Klimainhalte-Konsum* (Was wird genutzt?) Mehrfachantwort,
+    Single-Choice, Likert-Skala (mehrfach die Woche, einmal …)
+    *Klimainhalte-Konsum* (Was wird genutzt?) Single-Choice,
     Likert-Skala mit Statements Bsp.: “Ich konsumiere Inhalte zum Thema
     Klimawandel/ -Schutz”
--   **Media Literacy** Ordinal: Mehrfachantwort, Likert-Skala Statements
+-   **Media Literacy** Ordinal: Single-Choice, Likert-Skala Statements
     -&gt; orientiert an [diesem Messinstrument/
     Text](https://repositorio.ual.pt/bitstream/11144/3873/1/%5BCommunications%5D%20Measuring%20media%20and%20information%20literacy%20skills%20Construction%20of%20a%20test.pdf)
 -   **Miss-/ Vertrauen in die Wissenschaft** ordinal: *Item mit
@@ -71,11 +118,11 @@ alt="Faktorenraum" />
 ### Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen:
 
 -   **Mobilitätsverhalten** *verschiedene Items* Ranking bevorzugtes
-    Verkehrsmittel, Mehrfachantwort Häufigkeit Nutzung, Zustimmung
+    Verkehrsmittel, Single-Choice Häufigkeit Nutzung, Zustimmung
     Statement Likert Skala Bsp.: “Ich versuche selten das Auto zu nutzen
     wegen dem Klima”
 -   **Klimaschonende Ernährung** *verschiedene Items* nominal:
-    Mehrfachantwort (vegan/ vegetraisch/ pesketarisch/ ich esse alles/
+    Single-Choice (vegan/ vegetraisch/ pesketarisch/ ich esse alles/
     weiteres) Mehrfachantwort, Statements Likert Skala (Herkunft,
     Produktion, Siegel, Haltungsart)
 -   **Abfall- und Recyclingverhalten** *verschiedene Items* Statements,
@@ -83,7 +130,7 @@ alt="Faktorenraum" />
     Wiederverwendung, Flaschen Recyclen Kleidung (Herkunftsland, Masse,
     Inhalt)
 -   **Klimaschonende Ressourcen** *verschiedene Items* nominal:
-    Mehrfachantwort “ich heize mit…” (ÖL/ Gas/ Fernwärme/ gar nicht/
+    Single-Choice “ich heize mit…” (ÖL/ Gas/ Fernwärme/ gar nicht/
     Erdwärme/ Ofen-Kamin/ Paletts) ordinal: Mehrfachantwort Beweggründe
     (kostentechnisch/ Klima/ Verfügbarkeit/ weiteres) ordinal:
     Statements Likert-Skala zur Wassernutzung
@@ -97,43 +144,39 @@ alt="Faktorenraum" />
 
 ## Hypothesen
 
--   **Zusammenhangshypothesen**
+**Zusammenhangshypothesen**
 
 -   “Es gibt einen Zusammenhang zwischen dem persönlichen
     Bedrohungsempfinden und der Bereitschaft zum Ergreifen von
     Klimaschutzmaßnahmen. (ungerichtete Korrelation)”
-
--   “Je höher das Konsumverhalten von Social-Media, desto höher ist das
+-   “Je häufiger Social-Media konsumiert wird, desto höher ist das
     persönliche Bedrohungsempfinden bezüglich des Klimawandels. (lineare
     Regression)”
 
--   “Es gibt einen Zusammenhang zwischen der politischen Orientierung
-    und der Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen.”
-
--   **Regression**
+**Regression**
 
 -   “Hoher Social-Media-Konsum und ein hohes persönliches
     Bedrohungsempfinden sorgen für eine erhöhte Bereitschaft zum
     Ergreifen von Klimaschutzmaßnahmen.”
+-   “Die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen ist
+    anhängig von der Sympathie für politische Parteien.”
 
--   **Unterschiedshypothesen**
+**Unterschiedshypothesen**
 
 -   “Das persönliche Bedrohungsempfinden bezüglich des Klimawandels
     unterscheidet sich bei Personen mit hohem und niedrigem
-    Medienkonsum. (einfacher Unterschied)”
-
+    Medienkonsum. (unverbundener T-Test)”
 -   “Die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen
     unterscheidet sich bei Personen mit veganem oder vegetarischem
     Ernährungsverhalten im Gegensatz zu Personen mit uneingeschränktem
     Ernährungsverhalten.”
-
 -   “Das persönliche Bedrohungsempfinden bezüglich des Klimawandels
-    unterscheidet sich bei Personen mit linker politischer Orientierung
-    und bei Personen mit rechter politischer Orientierung.”
+    unterscheidet sich zwischen Personen mit linker politischer
+    Orientierung und bei Personen mit rechter politischer Orientierung.”
 
--   **MANCOVA**
+**MANCOVA**
 
--   “Geschlecht, Wohnort und Ernährungsform haben bei kontrolliertem
-    Alterseinfluss einen Einfluss auf das persönliche
+-   “Geschlecht, Wohnort und Mobilitätsverhalten haben bei
+    kontrolliertem Alterseinfluss einen Einfluss auf das persönliche
     Bedrohungsempfinden und auf die Bereitschaft zum Ergreifen von
     Klimaschutzmaßnahmen.”
