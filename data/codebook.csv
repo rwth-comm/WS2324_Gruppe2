@@ -1,0 +1,91 @@
+variable;variable_old;item;text;info
+age;age;NA;"Wie alt
+  sind Sie (in Jahren)?";"{""ImportId"":""QID1_TEXT""}"
+gender;gender;Selected Choice;Welches Geschlecht haben Sie? - Selected Choice;"{""ImportId"":""QID2""}"
+gender_3_TEXT;gender_3_TEXT;ein anderes Geschlecht, und zwar – Text;Welches Geschlecht haben Sie? - ein anderes Geschlecht, und zwar – Text;"{""ImportId"":""QID2_3_TEXT""}"
+edu;edu;Selected Choice;"Was ist
+  der höchste Bildungsabschluss, den Sie erlangt haben? - Selected Choice";"{""ImportId"":""QID7""}"
+edu_8_TEXT;edu_8_TEXT;einen anderen Bildungsabschluss, und zwar – Text;"Was ist
+  der höchste Bildungsabschluss, den Sie erlangt haben? - einen anderen Bildungsabschluss, und zwar – Text";"{""ImportId"":""QID7_8_TEXT""}"
+jobtype;jobtype;NA;"Was beschreibt Ihre berufliche
+  Situation am besten?";"{""ImportId"":""QID8""}"
+income;income;NA;"Wie hoch
+  ist das durchschnittliche monatliche Nettoeinkommen Ihres Haushalts
+  insgesamt?";"{""ImportId"":""QID4""}"
+SD6;SD6;NA;Wie viele Personen leben in Ihrem Haushalt, Sie eingeschlossen? Denken Sie dabei auch an im Haushalt lebende Kinder.;"{""ImportId"":""QID250_TEXT""}"
+SD7;SD7;NA;Sie haben angegeben, dass [QID250-ChoiceTextEntryValue] Personen in Ihrem Haushalt leben. Wie viele davon sind jünger als 14 Jahre?;"{""ImportId"":""QID251_TEXT""}"
+urban;urban;NA;Wie urban wohnen Sie aktuell?;"{""ImportId"":""QID321""}"
+SD8;SD8;NA;In welchem Kreis oder Bezirk leben Sie aktuell?;"{""ImportId"":""QID249""}"
+SM1_1;SM1_1;Instagram;Wie oft nutzen Sie die folgenden sozialen Netzwerke? - Instagram;"{""ImportId"":""QID311_1""}"
+SM1_2;SM1_2;Facebook;Wie oft nutzen Sie die folgenden sozialen Netzwerke? - Facebook;"{""ImportId"":""QID311_2""}"
+SM1_3;SM1_3;Youtube;Wie oft nutzen Sie die folgenden sozialen Netzwerke? - Youtube;"{""ImportId"":""QID311_3""}"
+SM1_4;SM1_4;TikTok;Wie oft nutzen Sie die folgenden sozialen Netzwerke? - TikTok;"{""ImportId"":""QID311_4""}"
+SM1_5;SM1_5;LinkedIn;Wie oft nutzen Sie die folgenden sozialen Netzwerke? - LinkedIn;"{""ImportId"":""QID311_5""}"
+SM1_6;SM1_6;Twitter / X;Wie oft nutzen Sie die folgenden sozialen Netzwerke? - Twitter / X;"{""ImportId"":""QID311_7""}"
+SM1_7;SM1_7;Sonstige (bitte angeben);Wie oft nutzen Sie die folgenden sozialen Netzwerke? - Sonstige (bitte angeben);"{""ImportId"":""QID311_6""}"
+SM1_7_TEXT;SM1_7_TEXT;Sonstige (bitte angeben) – Text;Wie oft nutzen Sie die folgenden sozialen Netzwerke? - Sonstige (bitte angeben) – Text;"{""ImportId"":""QID311_6_TEXT""}"
+CCS1;CCS1;NA;"Was
+  beschreibt Ihre Ernährungsform am besten?";"{""ImportId"":""QID151""}"
+CCS2;CCS2;NA;Wenn es um das Thema Autobesitz geht, was trifft am ehesten auf Sie zu?;"{""ImportId"":""QID152""}"
+CCS3;CCS3;NA;Was schätzen Sie: Wie viele km haben Sie im letzten Jahr privat mit dem Auto zurückgelegt?;"{""ImportId"":""QID153""}"
+CCS4;CCS4;NA;Und wie viele km haben Sie im letzten Jahr beruflich mit dem Auto zurückgelegt?;"{""ImportId"":""QID252""}"
+freq_transport_1;freq_transport_1;Auto (PKW);Welche Verkehrsmittel nutzen Sie wie häufig? - Auto (PKW);"{""ImportId"":""QID319_1""}"
+freq_transport_2;freq_transport_2;Roller, Mofa, Motorrad;Welche Verkehrsmittel nutzen Sie wie häufig? - Roller, Mofa, Motorrad;"{""ImportId"":""QID319_2""}"
+freq_transport_3;freq_transport_3;Fahrrad;Welche Verkehrsmittel nutzen Sie wie häufig? - Fahrrad;"{""ImportId"":""QID319_3""}"
+freq_transport_4;freq_transport_4;Lastenfahrrad;Welche Verkehrsmittel nutzen Sie wie häufig? - Lastenfahrrad;"{""ImportId"":""QID319_4""}"
+freq_transport_5;freq_transport_5;Bus / Straßenbahn;Welche Verkehrsmittel nutzen Sie wie häufig? - Bus / Straßenbahn;"{""ImportId"":""QID319_5""}"
+freq_transport_6;freq_transport_6;Bahn (S-Bahn, Regionalbahn, Fernverkehr);Welche Verkehrsmittel nutzen Sie wie häufig? - Bahn (S-Bahn, Regionalbahn, Fernverkehr);"{""ImportId"":""QID319_6""}"
+freq_transport_7;freq_transport_7;Taxi;Welche Verkehrsmittel nutzen Sie wie häufig? - Taxi;"{""ImportId"":""QID319_7""}"
+like_transport_1;like_transport_1;Auto;"Angenommen, Ihnen würden alle der folgenden Verkehrsmittel zur freien Verfügung stehen.
+Bitte bilden Sie eine Rangfolge, welche Verkehrsmittel Sie am liebsten wählen würden. - Auto";"{""ImportId"":""QID320_1""}"
+like_transport_2;like_transport_2;Roller, Mofa, Motorrad;"Angenommen, Ihnen würden alle der folgenden Verkehrsmittel zur freien Verfügung stehen.
+Bitte bilden Sie eine Rangfolge, welche Verkehrsmittel Sie am liebsten wählen würden. - Roller, Mofa, Motorrad";"{""ImportId"":""QID320_2""}"
+like_transport_3;like_transport_3;Fahrrad;"Angenommen, Ihnen würden alle der folgenden Verkehrsmittel zur freien Verfügung stehen.
+Bitte bilden Sie eine Rangfolge, welche Verkehrsmittel Sie am liebsten wählen würden. - Fahrrad";"{""ImportId"":""QID320_3""}"
+like_transport_4;like_transport_4;Lastenfahrrad;"Angenommen, Ihnen würden alle der folgenden Verkehrsmittel zur freien Verfügung stehen.
+Bitte bilden Sie eine Rangfolge, welche Verkehrsmittel Sie am liebsten wählen würden. - Lastenfahrrad";"{""ImportId"":""QID320_4""}"
+like_transport_5;like_transport_5;Bus / Straßenbahn;"Angenommen, Ihnen würden alle der folgenden Verkehrsmittel zur freien Verfügung stehen.
+Bitte bilden Sie eine Rangfolge, welche Verkehrsmittel Sie am liebsten wählen würden. - Bus / Straßenbahn";"{""ImportId"":""QID320_5""}"
+like_transport_6;like_transport_6;Bahn (S-Bahn, Regionalbahn, Fernferkehr);"Angenommen, Ihnen würden alle der folgenden Verkehrsmittel zur freien Verfügung stehen.
+Bitte bilden Sie eine Rangfolge, welche Verkehrsmittel Sie am liebsten wählen würden. - Bahn (S-Bahn, Regionalbahn, Fernferkehr)";"{""ImportId"":""QID320_6""}"
+like_transport_7;like_transport_7;Taxi;"Angenommen, Ihnen würden alle der folgenden Verkehrsmittel zur freien Verfügung stehen.
+Bitte bilden Sie eine Rangfolge, welche Verkehrsmittel Sie am liebsten wählen würden. - Taxi";"{""ImportId"":""QID320_7""}"
+CCBI1;CCBI1;NA;"Ich plane, den Konsum tierischer Produkte wie
+  Fleisch, Milch oder Eier (weiterhin) zu vermeiden.";"{""ImportId"":""QID75""}"
+CCBI5;CCBI5;NA;Ich plane, (weiterhin) bewusst im Haushalt Ressourcen in Form von Wasser einzusparen.;"{""ImportId"":""QID307""}"
+CCBI2;CCBI2;NA;"Ich plane, (weiterhin) bewusst im Haushalt
+  Energie in Form von Strom und Wärme einzusparen.";"{""ImportId"":""QID76""}"
+CCBI3;CCBI3;NA;Ich plane, (weiterhin) Fahrten mit dem Auto zu vermeiden.;"{""ImportId"":""QID77""}"
+CCBI4;CCBI4;NA;"Allgemein plane ich, (weiterhin) Maßnahmen zum Klimaschutz zu
+  ergreifen.";"{""ImportId"":""QID261""}"
+CCBI6;CCBI6;NA;Ich plane, Wertstoffe (Papier, Glas, Aluminium usw.) immer zu entsprechenden Recycling-Vorrichtungen zu bringen.;"{""ImportId"":""QID309""}"
+CCTB1;CCTB1;NA;"Im Laufe
+  meines Lebens werde ich von den negativen Folgen des Klimawandels betroffen sein.";"{""ImportId"":""QID94""}"
+CCTB2;CCTB2;NA;"Der Klimawandel hat auf mein
+  eigenes Leben keinen Einfluss.";"{""ImportId"":""QID95""}"
+CCTB3;CCTB3;NA;"Die
+  negativen Auswirkungen des Klimawandels können mir gefährlich werden.";"{""ImportId"":""QID96""}"
+CCTB4;CCTB4;NA;"Der Klimawandel ist eine der
+  größten Herausforderungen der Menschheit.";"{""ImportId"":""QID183""}"
+CCTB5;CCTB5;NA;"Der
+  Klimawandel hat weitreichende negative Auswirkungen.";"{""ImportId"":""QID182""}"
+CCTB6;CCTB6;NA;"Es macht mir Angst, an den
+  Klimawandel zu denken.";"{""ImportId"":""QID181""}"
+orientation1_1;orientation1_1;SPD;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - SPD;"{""ImportId"":""QID314_1""}"
+orientation1_2;orientation1_2;CDU / CSU;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - CDU / CSU;"{""ImportId"":""QID314_2""}"
+orientation1_3;orientation1_3;Bündnis 90 / Grüne;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - Bündnis 90 / Grüne;"{""ImportId"":""QID314_3""}"
+orientation1_4;orientation1_4;FDP;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - FDP;"{""ImportId"":""QID314_4""}"
+orientation1_5;orientation1_5;AfD;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - AfD;"{""ImportId"":""QID314_5""}"
+orientation1_6;orientation1_6;Die Linke;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - Die Linke;"{""ImportId"":""QID314_6""}"
+orientation1_7;orientation1_7;SSW;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - SSW;"{""ImportId"":""QID314_7""}"
+orientation1_8;orientation1_8;Andere:;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - Andere:;"{""ImportId"":""QID314_8""}"
+orientation1_8_TEXT;orientation1_8_TEXT;Andere: – Text;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - Andere: – Text;"{""ImportId"":""QID314_8_TEXT""}"
+orientation2_1;orientation2_1;Wir brauchen einen radikalen politischen Wandel, um die Klimakrise zu bewältigen.;Bitte bewerten Sie die folgenden Aussagen: - Wir brauchen einen radikalen politischen Wandel, um die Klimakrise zu bewältigen.;"{""ImportId"":""QID315_1""}"
+orientation2_2;orientation2_2;Politik sollte konsequent an Nachhaltigkeits- und Klimazielen ausgerichtet werden.;Bitte bewerten Sie die folgenden Aussagen: - Politik sollte konsequent an Nachhaltigkeits- und Klimazielen ausgerichtet werden.;"{""ImportId"":""QID315_2""}"
+orientation2_3;orientation2_3;Politisches Umdenken ist notwendig, um die erforderlichen Veränderungen umzusetzen.;Bitte bewerten Sie die folgenden Aussagen: - Politisches Umdenken ist notwendig, um die erforderlichen Veränderungen umzusetzen.;"{""ImportId"":""QID315_3""}"
+orientation2_4;orientation2_4;Es ist wichtig, nachhaltig zu produzieren, auch auf Kosten der Wirtschaft;Bitte bewerten Sie die folgenden Aussagen: - Es ist wichtig, nachhaltig zu produzieren, auch auf Kosten der Wirtschaft;"{""ImportId"":""QID315_4""}"
+activism1;activism1;NA;Haben Sie in den letzten 24 Monaten an Demonstrationen oder Protesten für den Klimaschutz teilgenommen?;"{""ImportId"":""QID316""}"
+activism2;activism2;NA;Sind Sie in einer Klimaschutzbewegung aktiv, z.B. Fridays for Future?;"{""ImportId"":""QID317""}"
+sciencescepticism_1;sciencescepticism_1;Wissenschaft und Technik werden viele Umweltprobleme lösen, ohne dass wir unsere Lebensweise ändern müssen;Bitte bewerten Sie die folgenden Aussagen - Wissenschaft und Technik werden viele Umweltprobleme lösen, ohne dass wir unsere Lebensweise ändern müssen;"{""ImportId"":""QID318_1""}"
+sciencescepticism_2;sciencescepticism_2;Wir vertrauen zu sehr der Wissenschaft und der Technik und zu wenig unseren Gefühlen;Bitte bewerten Sie die folgenden Aussagen - Wir vertrauen zu sehr der Wissenschaft und der Technik und zu wenig unseren Gefühlen;"{""ImportId"":""QID318_2""}"
+sciencescepticism_3;sciencescepticism_3;Das meiste, was Wissenschaft und Technik hervorgebracht haben, schadet der Umwelt;Bitte bewerten Sie die folgenden Aussagen - Das meiste, was Wissenschaft und Technik hervorgebracht haben, schadet der Umwelt;"{""ImportId"":""QID318_3""}"
