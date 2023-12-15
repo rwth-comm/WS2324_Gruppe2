@@ -54,32 +54,83 @@ Abstract-Info
 * **Soziales Anerkennungsbedürfnis (Erwünschtheitseffekt)**  _Mehrfachantwort, Likert-skala_ [siehe Hier](https://zis.gesis.org/skala/Stock%C3%A9-Bed%C3%BCrfnis-nach-sozialer-Anerkennung)
 * **Wahrnehmung Klimaschutz**  _Likert-Skala zum Klimaschutz_ [siehe Hier](https://zis.gesis.org/skala/Kals-Becker-Montada-Ittner-Trierer-Skalensystem-zum-Umweltschutz)
 * **Bereitschaft zum Handeln** _Item nach Montada et al. 1999_ [siehe Hier](https://zis.gesis.org/skala/Montada-Kals-Becker-Umweltsch%C3%BCtzende-und-gef%C3%A4hrdende-Engagementbereitschaften)
-
+be
 ## Hypothesen
 * **Zusammenhangshypothesen** 
 
 * "Es gibt einen Zusammenhang zwischen dem persönlichen Bedrohungsempfinden und der Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen. (ungerichtete Korrelation)" 
 
-* "Je höher das Konsumverhalten von Social-Media, desto höher ist das persönliche Bedrohungsempfinden bezüglich des Klimawandels. (lineare Regression)" 
+```{r}
+cor.test(PBE ~ BEK, method = "pearson", alternative = "two.sided") 
+```
 
-* "Es gibt einen Zusammenhang zwischen der politischen Orientierung und der Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen." 
+
+* "Je häufiger Social-Media konsumiert wird, desto höher ist das persönliche Bedrohungsempfinden bezüglich des Klimawandels. (lineare Regression)"
+
+```{r}
+cor.test(SMK, PBE, method = "pearson", alternative = "greater") 
+```
+
+
+* "Die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen ist abhängig von der Sympathie für politische Parteien." 
+
+```{r}
+model <- lm(BEK ~ SPP, data = Daten) 
+   summary(model) 
+```
 
   
 * **Regression**
 
 * "Hoher Social-Media-Konsum und ein hohes persönliches Bedrohungsempfinden sorgen für eine erhöhte Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen." 
 
+```{r}
+model <- lm(hSMK ~ hBEK, data = Daten) 
+   summary(model) 
+```
   
 
 * **Unterschiedshypothesen** 
 
-* "Das persönliche Bedrohungsempfinden bezüglich des Klimawandels unterscheidet sich bei Personen mit hohem und niedrigem Medienkonsum. (einfacher Unterschied)" 
+* "Das persönliche Bedrohungsempfinden bezüglich des Klimawandels unterscheidet sich bei Personen mit hohem und niedrigem  Social-Media-Konsum. (einfacher Unterschied)" 
+
+```{r}
+t.test(nSMK, nSMK, 
+       alternative = c("two.sided", "less", "greater")) 
+```
+
 
 * "Die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen unterscheidet sich bei Personen mit veganem oder vegetarischem Ernährungsverhalten im Gegensatz zu Personen mit uneingeschränktem Ernährungsverhalten." 
 
+```{r}
+t.test(VE, UE,
+       alternative = c("two.sided", "less", "greater")) 
+```
+
+
 * "Das persönliche Bedrohungsempfinden bezüglich des Klimawandels unterscheidet sich bei Personen mit linker politischer Orientierung und bei Personen mit rechter politischer Orientierung." 
+
+```{r}
+t.test(LPO, RPO,
+       alternative = c("two.sided", "less", "greater")) 
+```
 
   
 * **MANCOVA** 
 
 * "Geschlecht, Wohnort und Ernährungsform haben bei kontrolliertem Alterseinfluss einen Einfluss auf das persönliche Bedrohungsempfinden und auf die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen."
+
+```{r}
+jmv::mancova(data = Daten, deps= c("GN", "WO", "MV"), factors = c("PBE", "BEK"), covs = c(age), multivar = list("pillai", "wilks", "hotel", "roy")) 
+```
+
+## Variablennamen/ Legende
+
+* **VE** (vegane, vegetarische Ernährung), UE (uneingeschränkte Ernährung) 
+* **LPO** (linke polit. Orientierung), RPO (rechte polit. Orientierung) 
+* **GN** (Geschlecht), WO (wohnort), MV (Mobilitätsverhalten) 
+* **PBE** (persönliches Bedrohungsempfinden), BEK (Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen), hBEK (hohe ...) 
+* **Age** (Alter) 
+* **SMK** (Social-Media-Konsum), hSMK (hoher ...) 
+* **SPP** (Sympathie polit. Parteien) 
+* **EF** (Ernährungsweise) 
