@@ -37,18 +37,18 @@ raw.short$gender %>%
   recode(`1`= "männlich", `2` = "weiblich", `3`="divers") %>% 
   as.factor() -> raw.short$gender
 
-#raw.short$branch %>% 
-  recode(`1`="Forschung und Entwicklung",
-         `2`="Finanzen, Versicherungen und Immobilien",
-         `3`="Lehre", 
-         `4`="Medizin (Pharma und Gesundheit",
-         `5`="Dienstleistungen und Handwerk",
-         `6`="Freizeit", 
-         `7`="Gesellschaft", 
-         `8`="Agrarwissenschaft", 
-         `9`="Technik", 
-         `10`="Sonstiges") %>% 
-  as.factor() -> raw.short$branch
+# #raw.short$branch %>% 
+#  # recode(`1`="Forschung und Entwicklung",
+#   #       `2`="Finanzen, Versicherungen und Immobilien",
+#    #      `3`="Lehre", 
+#     #     `4`="Medizin (Pharma und Gesundheit)",
+#      #    `5`="Dienstleistungen und Handwerk",
+#       #   `6`="Freizeit", 
+#     #     `7`="Gesellschaft", 
+#     #     `8`="Agrarwissenschaft", 
+#          `9`="Technik", 
+#          `10`="Sonstiges") %>% 
+#   as.factor() -> raw.short$branch
 
 raw.short$edu %>% 
   ordered(levels = c(1:8),
@@ -96,8 +96,8 @@ raw.short$urban %>%
 
 # Qualitätskontrolle ----
 
-speederlimit <- median(raw.short$`Duration (in seconds)`) / 3
-raw.short <- filter(raw.short, `Duration (in seconds)` > speederlimit)
+#speederlimit <- median(raw.short$`Duration (in seconds)`) / 3
+#raw.short <- filter(raw.short, `Duration (in seconds)` > speederlimit)
 
 # Skalen berechnen ----
 
@@ -124,18 +124,13 @@ raw.short <- filter(raw.short, `Duration (in seconds)` > speederlimit)
   #DT_Psychopathy = c("dark tetrad_2","-dark tetrad_4n","-dark tetrad_8n","dark tetrad_13"),
   #DT_Sadism = c("dark tetrad_5","dark tetrad_10","dark tetrad_14","dark tetrad_16"))
   
-schluesselliste_final <- list(
+schluesselliste <- list(
   SMK = c("sm1_1", "sm1_2", "sm1_3", "sm1_4", "sm1_5", "sm1_6", "sm1_7"),
-  EF = c("ef"),
-  PO = c("orientation1_1", "orientation1_2", "orientation1_3", "orientation1_4", "orientation1_5", "orientation1_6", "orientation1_7", "orientation1_8", "orientation2_1", "orientation2_2", "orientation2_3", "orientation2_4", "activism1", "activism2", "sciencescepticism_1", "sciencescepticism_2", "sciencescepticism_3"),
+  PO = c("orientation1_1", "orientation1_2", "orientation1_3", "orientation1_4", "orientation1_5", "orientation1_6", "orientation1_7", "orientation1_8", "orientation2_1", "orientation2_2", "orientation2_3", "orientation2_4", "activism1", "activism2", "sciencescepticism_1", "-sciencescepticism_2", "-sciencescepticism_3"),
   SPP = c("orientation1_1", "orientation1_2", "orientation1_3", "orientation1_4", "orientation1_5", "orientation1_6", "orientation1_7", "orientation1_8"),
-  GN = c("gender"),
-  WO = c("urban", "SD8"),
   MV = c("auto1", "auto2", "auto3", "freq_transport_1", "freq_transport_2", "freq_transport_3", "freq_transport_4", "freq_transport_5", "freq_transport_6", "freq_transport_7", "like_transport_1", "like_transport_2", "like_transport_3", "like_transport_4","like_transport_5", "like_transport_6","like_transport_7"),
-  PBE = c("bedrohung1", "bedrohung2", "bedrohung3", "bedrohung4","bedrohung5", "bedrohung6"),
-  BEK = c("bereitschaft1", "bereitschaft2", "bereitschaft3", "bereitschaft4", "bereitschaft5", "bereitschaft6"),
-  AGE = c("age")
-  
+  PBE = c("bedrohung1", "-bedrohung2", "bedrohung3", "bedrohung4","bedrohung5", "bedrohung6"),
+  BEK = c("bereitschaft1", "bereitschaft2", "bereitschaft3", "bereitschaft4", "bereitschaft5", "bereitschaft6")
 )
 
 
@@ -145,15 +140,15 @@ data <- bind_cols(raw.short, as_tibble(scores$scores))
 
 # Lösung abspeichern ----
 
-data %>% 
-  select(-starts_with("bf", ignore.case = F)) %>% 
-  select(-starts_with("ati", ignore.case = F)) %>%
-  select(-starts_with("wrf", ignore.case = F)) %>%
-  select(-starts_with("will", ignore.case = F)) %>%
-  select(-starts_with("abi", ignore.case = F)) %>%
-  select(-starts_with("commi", ignore.case = F)) %>%
-  select(-starts_with("motiv", ignore.case = F)) %>%
-  select(-starts_with("dark", ignore.case = F)) -> data
+# data %>% 
+#   select(-starts_with("bf", ignore.case = F)) %>% 
+#   select(-starts_with("ati", ignore.case = F)) %>%
+#   select(-starts_with("wrf", ignore.case = F)) %>%
+#   select(-starts_with("will", ignore.case = F)) %>%
+#   select(-starts_with("abi", ignore.case = F)) %>%
+#   select(-starts_with("commi", ignore.case = F)) %>%
+#   select(-starts_with("motiv", ignore.case = F)) %>%
+#   select(-starts_with("dark", ignore.case = F)) -> data
 
 saveRDS(data, "data/dataFromNumeric.rds")
 
