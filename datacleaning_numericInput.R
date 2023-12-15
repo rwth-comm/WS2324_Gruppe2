@@ -1,7 +1,7 @@
 # Pakete laden ----
-
 library(tidyverse)
 library(psych)
+library(jmv)
 source("qualtricshelpers.R")
 
 # Daten einlesen ----
