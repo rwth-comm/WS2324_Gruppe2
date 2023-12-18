@@ -103,12 +103,54 @@ alt="Faktorenraum" />
     Bedrohungsempfinden und der Bereitschaft zum Ergreifen von
     Klimaschutzmaßnahmen. (ungerichtete Korrelation)”
 
--   “Je höher das Konsumverhalten von Social-Media, desto höher ist das
+<!-- -->
+
+    # cor.test(PBE, BEK, method = "pearson", alternative = "two.sided") 
+    ## Feedback JRH: Ja, fast:
+    cor.test(df$PBE, df$BEK, method = "pearson", alternative = "two.sided") 
+
+    ## 
+    ##  Pearson's product-moment correlation
+    ## 
+    ## data:  df$PBE and df$BEK
+    ## t = -0.28108, df = 98, p-value = 0.7792
+    ## alternative hypothesis: true correlation is not equal to 0
+    ## 95 percent confidence interval:
+    ##  -0.2235537  0.1689783
+    ## sample estimates:
+    ##         cor 
+    ## -0.02838179
+
+-   “Je häufiger Social-Media konsumiert wird, desto höher ist das
     persönliche Bedrohungsempfinden bezüglich des Klimawandels. (lineare
     Regression)”
 
--   “Es gibt einen Zusammenhang zwischen der politischen Orientierung
-    und der Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen.”
+<!-- -->
+
+    # cor.test(SMK, PBE, method = "pearson", alternative = "greater") 
+    ## Feedback JRH: Stark, dass Sie die Hypothese gerichtet umgesetzt haben! Es ist aber Korrelation, nicht Regression. 
+    cor.test(df$SMK, df$PBE, method = "pearson", alternative = "two.sided") 
+
+    ## 
+    ##  Pearson's product-moment correlation
+    ## 
+    ## data:  df$SMK and df$PBE
+    ## t = -1.5563, df = 98, p-value = 0.1228
+    ## alternative hypothesis: true correlation is not equal to 0
+    ## 95 percent confidence interval:
+    ##  -0.34131325  0.04240475
+    ## sample estimates:
+    ##        cor 
+    ## -0.1553069
+
+-   “Die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen ist
+    abhängig von der Sympathie für politische Parteien.”
+
+<!-- -->
+
+    #model <- lm(BEK ~ SPP, data = Daten) 
+    #   summary(model) 
+    ## Feedback JRH: Leider nein. Ihre UVs sind die Werte für die Bewertung der einzelnen Parteien. Bitte jmv::linReg() verwenden. 
 
 -   **Regression**
 
@@ -116,20 +158,44 @@ alt="Faktorenraum" />
     Bedrohungsempfinden sorgen für eine erhöhte Bereitschaft zum
     Ergreifen von Klimaschutzmaßnahmen.”
 
+<!-- -->
+
+    #model <- lm(hSMK ~ hBEK, data = Daten) 
+    #   summary(model) 
+    ## Feedback JRH: Leider nein. Bitte jmv::linReg() verwenden. 
+    ## Dass Sie in der Hypothese annehmen, dass der Einfluss von SMK und PBE positiv ist, lässt sich im R-Code für die Regression NICHT ablesen. 
+    ## Ihre UVS sind einfach SMK und PBE. 
+
 -   **Unterschiedshypothesen**
 
 -   “Das persönliche Bedrohungsempfinden bezüglich des Klimawandels
     unterscheidet sich bei Personen mit hohem und niedrigem
-    Medienkonsum. (einfacher Unterschied)”
+    Social-Media-Konsum. (einfacher Unterschied)”
+
+<!-- -->
+
+    #t.test(nSMK, nSMK, 
+    #      alternative = c("two.sided", "less", "greater")) 
+    ## Feedback JRH: Das ist p-Hacking, weil Sie dieselbe Hypothese schon als Zusammenhangshypothese haben. 
 
 -   “Die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen
     unterscheidet sich bei Personen mit veganem oder vegetarischem
     Ernährungsverhalten im Gegensatz zu Personen mit uneingeschränktem
     Ernährungsverhalten.”
 
+<!-- -->
+
+    # t.test(VE, UE, alternative = c("two.sided", "less", "greater")) 
+    ## Feedback JRH: Der Faktor heißt bei Ihnen ef, nicht VE oder UE. Die Syntax ist außerdem leider falsch. Bitte nochmal in die Videos oder das Wiederholungsvideo gucken. 
+
 -   “Das persönliche Bedrohungsempfinden bezüglich des Klimawandels
     unterscheidet sich bei Personen mit linker politischer Orientierung
     und bei Personen mit rechter politischer Orientierung.”
+
+<!-- -->
+
+    # t.test(LPO, RPO, alternative = c("two.sided", "less", "greater")) 
+    ## Feedback JRH: Was linke oder rechte politsche Orientierung ist, haben Sie leider nicht spezifiziert. Außerdem ist auch hier die Syntax falsch.
 
 -   **MANCOVA**
 
@@ -137,3 +203,24 @@ alt="Faktorenraum" />
     Alterseinfluss einen Einfluss auf das persönliche
     Bedrohungsempfinden und auf die Bereitschaft zum Ergreifen von
     Klimaschutzmaßnahmen.”
+
+<!-- -->
+
+    # jmv::mancova(data = Daten, deps= c("GN", "WO", "MV"), factors = c("PBE", "BEK"), covs = c(age), multivar = list("pillai", "wilks", "hotel", "roy")) 
+    ## Feedback JRH: Sieht eigentlich gut aus, aber Sie halten sich gerade nicht an ihre eigenen Benennungen. 
+    ## Geschlecht, Wohnort und Ernährungsform haben Sie gender, urban und ef genannt. 
+    ## Außerdem haben Sie deps und factors vertauscht. 
+
+## Variablennamen/ Legende
+
+-   **VE** (vegane, vegetarische Ernährung), UE (uneingeschränkte
+    Ernährung)
+-   **LPO** (linke polit. Orientierung), RPO (rechte polit.
+    Orientierung)
+-   **GN** (Geschlecht), WO (wohnort), MV (Mobilitätsverhalten)
+-   **PBE** (persönliches Bedrohungsempfinden), BEK (Bereitschaft zum
+    Ergreifen von Klimaschutzmaßnahmen), hBEK (hohe …)
+-   **Age** (Alter)
+-   **SMK** (Social-Media-Konsum), hSMK (hoher …)
+-   **SPP** (Sympathie polit. Parteien)
+-   **EF** (Ernährungsweise)

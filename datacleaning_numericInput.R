@@ -17,7 +17,12 @@ raw %>%
 
 # Spalten entfernen ----
 
+## Feedback JRH: Sie behalten hier viel zu viele Items. 
 raw.short <- raw[,c(-38:-45,-64:-82,-89:-104,-111:-133,-152,-153,-1:-18)]
+
+## Feedback JRH: Gemessen an dem, was sie wirklich in den Hypothesen verarbeiten, wäre das hier ausreichend:
+# raw.short <- raw[,c(-38:-45,-64:-82,-89:-104,-111:-133,-152,-153,-1:-18,-25:-27,-29, -47:-63, -147:-151)]
+
 
 # Spalten umbenennen ----
 
@@ -33,6 +38,7 @@ names(raw.short) <- codebook$variable
 
 raw.short$age <- as.numeric(raw.short$age)
 
+## Feedback JRH: Das stimmt nicht mit dem Fragebogen überein. Bitte nochmal die Zuordnung von Zahl und Geschlecht überprüfen.
 raw.short$gender %>% 
   recode(`1`= "männlich", `2` = "weiblich", `3`="divers") %>% 
   as.factor() -> raw.short$gender
@@ -92,7 +98,7 @@ raw.short$urban %>%
                      "Vorstadt / Kleinstadt",
                      "Ländlich")) -> raw.short$urban
 
-
+## Feedback JRH: Sie haben vergessen, raw.short$ef in einen factor umzuwandeln. Das ist kritisch, denn Sie haben eine Hypothese dazu.
 
 # Qualitätskontrolle ----
 
@@ -124,6 +130,15 @@ raw.short$urban %>%
   #DT_Psychopathy = c("dark tetrad_2","-dark tetrad_4n","-dark tetrad_8n","dark tetrad_13"),
   #DT_Sadism = c("dark tetrad_5","dark tetrad_10","dark tetrad_14","dark tetrad_16"))
   
+
+## Feedback JRH: Mit der Schlüselliste bin ich leider noch nicht so zufrieden:
+## - SMK ist keine Skala im engeren Sinne. Hier passiert aber kein inhaltlicher Fehler. Sie können das so lassen, solange Sie im Hinterkopf behalten, dass die Skala formativ ist. 
+## - PO und SPP machen als Skala keinen Sinn. Die Sympathiewerte für einzelne Parteien haben ja keinen gemeinsamen dahinterliegenden Faktor. Ich würde Ihnen empfehlen, im Codebook die Items in symp_spd usw. umzubenennnen. 
+## - In MV fassen Sie sehr viele unterschiedliche Items in einem Topf. Autobesitz in 3 Stufen, wie oft man ein Lastenfahrad benutzt in 7 Stufen, wie beliebt das Auto im Vergleich zum Taxi ist usw.
+## - Ich würde ihnen empfehlen, PO, SPP und MV einfach zu löschen. Sie haben zu diesen Faktoren auch gar keine Hypothesen. 
+## - PBE und BEK passt.
+## - Es fehlt ein Faktor für linke und rechte politische Orientierung. 
+
 schluesselliste <- list(
   SMK = c("sm1_1", "sm1_2", "sm1_3", "sm1_4", "sm1_5", "sm1_6", "sm1_7"),
   PO = c("orientation1_1", "orientation1_2", "orientation1_3", "orientation1_4", "orientation1_5", "orientation1_6", "orientation1_7", "orientation1_8", "orientation2_1", "orientation2_2", "orientation2_3", "orientation2_4", "activism1", "activism2", "sciencescepticism_1", "-sciencescepticism_2", "-sciencescepticism_3"),

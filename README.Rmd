@@ -7,6 +7,7 @@ output: md_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+df <- readRDS("data/dataFromNumeric.rds")
 ```
 
 # Verhaltensänderung beim Klimawandel
@@ -61,22 +62,27 @@ Abstract-Info
 * "Es gibt einen Zusammenhang zwischen dem persönlichen Bedrohungsempfinden und der Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen. (ungerichtete Korrelation)" 
 
 ```{r}
-cor.test(PBE, BEK, method = "pearson", alternative = "two.sided") 
+# cor.test(PBE, BEK, method = "pearson", alternative = "two.sided") 
+## Feedback JRH: Ja, fast:
+cor.test(df$PBE, df$BEK, method = "pearson", alternative = "two.sided") 
 ```
 
 
 * "Je häufiger Social-Media konsumiert wird, desto höher ist das persönliche Bedrohungsempfinden bezüglich des Klimawandels. (lineare Regression)"
 
 ```{r}
-cor.test(SMK, PBE, method = "pearson", alternative = "greater") 
+# cor.test(SMK, PBE, method = "pearson", alternative = "greater") 
+## Feedback JRH: Stark, dass Sie die Hypothese gerichtet umgesetzt haben! Es ist aber Korrelation, nicht Regression. 
+cor.test(df$SMK, df$PBE, method = "pearson", alternative = "two.sided") 
 ```
 
 
 * "Die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen ist abhängig von der Sympathie für politische Parteien." 
 
 ```{r}
-model <- lm(BEK ~ SPP, data = Daten) 
-   summary(model) 
+#model <- lm(BEK ~ SPP, data = Daten) 
+#   summary(model) 
+## Feedback JRH: Leider nein. Ihre UVs sind die Werte für die Bewertung der einzelnen Parteien. Bitte jmv::linReg() verwenden. 
 ```
 
   
@@ -85,8 +91,11 @@ model <- lm(BEK ~ SPP, data = Daten)
 * "Hoher Social-Media-Konsum und ein hohes persönliches Bedrohungsempfinden sorgen für eine erhöhte Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen." 
 
 ```{r}
-model <- lm(hSMK ~ hBEK, data = Daten) 
-   summary(model) 
+#model <- lm(hSMK ~ hBEK, data = Daten) 
+#   summary(model) 
+## Feedback JRH: Leider nein. Bitte jmv::linReg() verwenden. 
+## Dass Sie in der Hypothese annehmen, dass der Einfluss von SMK und PBE positiv ist, lässt sich im R-Code für die Regression NICHT ablesen. 
+## Ihre UVS sind einfach SMK und PBE. 
 ```
   
 
@@ -95,24 +104,26 @@ model <- lm(hSMK ~ hBEK, data = Daten)
 * "Das persönliche Bedrohungsempfinden bezüglich des Klimawandels unterscheidet sich bei Personen mit hohem und niedrigem  Social-Media-Konsum. (einfacher Unterschied)" 
 
 ```{r}
-t.test(nSMK, nSMK, 
-       alternative = c("two.sided", "less", "greater")) 
+#t.test(nSMK, nSMK, 
+#      alternative = c("two.sided", "less", "greater")) 
+## Feedback JRH: Das ist p-Hacking, weil Sie dieselbe Hypothese schon als Zusammenhangshypothese haben. 
 ```
 
 
 * "Die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen unterscheidet sich bei Personen mit veganem oder vegetarischem Ernährungsverhalten im Gegensatz zu Personen mit uneingeschränktem Ernährungsverhalten." 
 
 ```{r}
-t.test(VE, UE,
-       alternative = c("two.sided", "less", "greater")) 
+# t.test(VE, UE, alternative = c("two.sided", "less", "greater")) 
+## Feedback JRH: Der Faktor heißt bei Ihnen ef, nicht VE oder UE. Die Syntax ist außerdem leider falsch. Bitte nochmal in die Videos oder das Wiederholungsvideo gucken. 
+
 ```
 
 
 * "Das persönliche Bedrohungsempfinden bezüglich des Klimawandels unterscheidet sich bei Personen mit linker politischer Orientierung und bei Personen mit rechter politischer Orientierung." 
 
 ```{r}
-t.test(LPO, RPO,
-       alternative = c("two.sided", "less", "greater")) 
+# t.test(LPO, RPO, alternative = c("two.sided", "less", "greater")) 
+## Feedback JRH: Was linke oder rechte politsche Orientierung ist, haben Sie leider nicht spezifiziert. Außerdem ist auch hier die Syntax falsch.
 ```
 
   
@@ -121,7 +132,10 @@ t.test(LPO, RPO,
 * "Geschlecht, Wohnort und Ernährungsform haben bei kontrolliertem Alterseinfluss einen Einfluss auf das persönliche Bedrohungsempfinden und auf die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen."
 
 ```{r}
-jmv::mancova(data = Daten, deps= c("GN", "WO", "MV"), factors = c("PBE", "BEK"), covs = c(age), multivar = list("pillai", "wilks", "hotel", "roy")) 
+# jmv::mancova(data = Daten, deps= c("GN", "WO", "MV"), factors = c("PBE", "BEK"), covs = c(age), multivar = list("pillai", "wilks", "hotel", "roy")) 
+## Feedback JRH: Sieht eigentlich gut aus, aber Sie halten sich gerade nicht an ihre eigenen Benennungen. 
+## Geschlecht, Wohnort und Ernährungsform haben Sie gender, urban und ef genannt. 
+## Außerdem haben Sie deps und factors vertauscht. 
 ```
 
 ## Variablennamen/ Legende
