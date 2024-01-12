@@ -56,6 +56,7 @@ Abstract-Info
 * **Wahrnehmung Klimaschutz**  _Likert-Skala zum Klimaschutz_ [siehe Hier](https://zis.gesis.org/skala/Kals-Becker-Montada-Ittner-Trierer-Skalensystem-zum-Umweltschutz)
 * **Bereitschaft zum Handeln** _Item nach Montada et al. 1999_ [siehe Hier](https://zis.gesis.org/skala/Montada-Kals-Becker-Umweltsch%C3%BCtzende-und-gef%C3%A4hrdende-Engagementbereitschaften)
 
+
 ## Hypothesen
 * **Zusammenhangshypothesen** 
 
@@ -97,11 +98,13 @@ jmv::linReg(data = df,
 * "Hoher Social-Media-Konsum und ein hohes persönliches Bedrohungsempfinden sorgen für eine erhöhte Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen." 
 
 ```{r}
-#model <- lm(hSMK ~ hBEK, data = Daten) 
-#   summary(model) 
-## Feedback JRH: Leider nein. Bitte jmv::linReg() verwenden. 
-## Dass Sie in der Hypothese annehmen, dass der Einfluss von SMK und PBE positiv ist, lässt sich im R-Code für die Regression NICHT ablesen. 
-## Ihre UVS sind einfach SMK und PBE. 
+jmv::linReg(data = df,
+            dep = c("BEK"),
+            covs = c("SMK", "PBE"),
+            blocks = c("SMK", "PBE"),
+            stdEst = T, modelTest = T, r2Adj = TRUE)
+
+
 ```
   
 
@@ -110,17 +113,18 @@ jmv::linReg(data = df,
 * "Das persönliche Bedrohungsempfinden bezüglich des Klimawandels unterscheidet sich bei Personen mit hohem und niedrigem  Social-Media-Konsum. (einfacher Unterschied)" 
 
 ```{r}
-#t.test(nSMK, nSMK, 
-#      alternative = c("two.sided", "less", "greater")) 
-## Feedback JRH: Das ist p-Hacking, weil Sie dieselbe Hypothese schon als Zusammenhangshypothese haben. 
+
+t.test
 ```
 
 
-* "Die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen unterscheidet sich bei Personen mit veganem oder vegetarischem Ernährungsverhalten im Gegensatz zu Personen mit uneingeschränktem Ernährungsverhalten." 
+* "Die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen unterscheidet sich bei Personen mit veganem Ernährungsverhalten im Gegensatz zu Personen mit uneingeschränktem Ernährungsverhalten." 
 
-```{r}
-# t.test(VE, UE, alternative = c("two.sided", "less", "greater")) 
-## Feedback JRH: Der Faktor heißt bei Ihnen ef, nicht VE oder UE. Die Syntax ist außerdem leider falsch. Bitte nochmal in die Videos oder das Wiederholungsvideo gucken. 
+# Unverbundener T-Test:
+```{r} 
+
+t.test(filter(df, df$ef == "vegan")$BEK, 
+       filter(df, df$ef == "omni")$BEK)
 
 ```
 
@@ -128,8 +132,8 @@ jmv::linReg(data = df,
 * "Das persönliche Bedrohungsempfinden bezüglich des Klimawandels unterscheidet sich bei Personen mit linker politischer Orientierung und bei Personen mit rechter politischer Orientierung." 
 
 ```{r}
-# t.test(LPO, RPO, alternative = c("two.sided", "less", "greater")) 
-## Feedback JRH: Was linke oder rechte politsche Orientierung ist, haben Sie leider nicht spezifiziert. Außerdem ist auch hier die Syntax falsch.
+
+t.test
 ```
 
   
@@ -138,10 +142,7 @@ jmv::linReg(data = df,
 * "Geschlecht, Wohnort und Ernährungsform haben bei kontrolliertem Alterseinfluss einen Einfluss auf das persönliche Bedrohungsempfinden und auf die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen."
 
 ```{r}
-# jmv::mancova(data = Daten, deps= c("GN", "WO", "MV"), factors = c("PBE", "BEK"), covs = c(age), multivar = list("pillai", "wilks", "hotel", "roy")) 
-## Feedback JRH: Sieht eigentlich gut aus, aber Sie halten sich gerade nicht an ihre eigenen Benennungen. 
-## Geschlecht, Wohnort und Ernährungsform haben Sie gender, urban und ef genannt. 
-## Außerdem haben Sie deps und factors vertauscht. 
+jmv::mancova(data = df, factors = c("gender", "urban", "ef"), deps = c("PBE", "BEK"), covs = c(age), multivar = list("pillai", "wilks", "hotel", "roy"))
 ```
 
 ## Variablennamen/ Legende
