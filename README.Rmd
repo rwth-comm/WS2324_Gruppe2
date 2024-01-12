@@ -56,6 +56,19 @@ Abstract-Info
 * **Wahrnehmung Klimaschutz**  _Likert-Skala zum Klimaschutz_ [siehe Hier](https://zis.gesis.org/skala/Kals-Becker-Montada-Ittner-Trierer-Skalensystem-zum-Umweltschutz)
 * **Bereitschaft zum Handeln** _Item nach Montada et al. 1999_ [siehe Hier](https://zis.gesis.org/skala/Montada-Kals-Becker-Umweltsch%C3%BCtzende-und-gef%C3%A4hrdende-Engagementbereitschaften)
 
+### Altersverteilung der Stichprobe im Histogramm
+
+```{r}
+library(ggplot2)
+
+ggplot(df) +
+ aes(x = age) +
+ geom_histogram(bins = 30L, fill = "#112446") +
+ labs(x = "Alter in Jahren", y = "Anzahl", 
+ title = "Stichprobe", subtitle = paste0("Altersverteilung im Histogramm (n=",nrow(df), ")") )+
+ theme_minimal()
+
+```
 
 ## Hypothesen
 * **Zusammenhangshypothesen** 

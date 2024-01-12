@@ -156,3 +156,16 @@ data <- bind_cols(raw.short, as_tibble(scores$scores))
 
 saveRDS(data, "data/dataFromNumeric.rds")
 
+
+# Age Histogramm
+
+
+library(ggplot2)
+
+ggplot(raw.short) +
+ aes(x = age) +
+ geom_histogram(bins = 30L, fill = "#112446") +
+ labs(x = "Alter in Jahren", y = "Anzahl", 
+ title = "Stichprobe", subtitle = paste0("Altersverteilung im Histogramm (n=",nrow(raw.short), ")") )+
+ theme_minimal()
+
