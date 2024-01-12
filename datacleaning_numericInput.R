@@ -6,22 +6,18 @@ source("qualtricshelpers.R")
 
 # Daten einlesen ----
 
-filename <- "data/Testdaten_numeric.csv"
+filename <- "data/Umfragedaten090124.csv"
 raw <- load_qualtrics_csv(filename)
 
 # Zeilen entfernen ----
 
 raw %>% 
-  #filter(Status == 0) %>% 
+  filter(Status == 0) %>% 
   filter(Progress == 100) -> raw
 
 # Spalten entfernen ----
 
-## Feedback JRH: Sie behalten hier viel zu viele Items. 
-raw.short <- raw[,c(-38:-45,-64:-82,-89:-104,-111:-133,-152,-153,-1:-18)]
-
-## Feedback JRH: Gemessen an dem, was sie wirklich in den Hypothesen verarbeiten, wäre das hier ausreichend:
-# raw.short <- raw[,c(-38:-45,-64:-82,-89:-104,-111:-133,-152,-153,-1:-18,-25:-27,-29, -47:-63, -147:-151)]
+raw.short <- raw[,c(-38:-45,-64:-82,-89:-104,-111:-133,-152,-153,-1:-18,-25:-27,-29, -47:-63, -147:-151)]
 
 
 # Spalten umbenennen ----
@@ -38,9 +34,8 @@ names(raw.short) <- codebook$variable
 
 raw.short$age <- as.numeric(raw.short$age)
 
-## Feedback JRH: Das stimmt nicht mit dem Fragebogen überein. Bitte nochmal die Zuordnung von Zahl und Geschlecht überprüfen.
 raw.short$gender %>% 
-  recode(`1`= "männlich", `2` = "weiblich", `3`="divers") %>% 
+  recode(`2`= "männlich", `1` = "weiblich", `3`="divers") %>% 
   as.factor() -> raw.short$gender
 
 # #raw.short$branch %>% 
@@ -77,20 +72,6 @@ raw.short$jobtype %>%
                      "nicht erwerbstätig")) -> raw.short$jobtype
 
 
-raw.short$income %>% 
-  ordered(levels = c(1:12),
-          labels = c("bis 450 €",
-                     "451 bis 1000 €",
-                     "1001 bis 1500 €", 
-                     "1501 bis 2000 €",
-                     "2001 bis 2500 €",
-                     "2501 bis 3000 €",
-                     "3001 bis 3500 €", 
-                     "3501 bis 4000 €",
-                     "4001 bis 4500 €",
-                     "4501 bis 5000 €",
-                     "über 5000 €",
-                     "keine Angabe")) -> raw.short$income
 
 raw.short$urban %>% 
   ordered(levels = c(1:3),
@@ -98,7 +79,15 @@ raw.short$urban %>%
                      "Vorstadt / Kleinstadt",
                      "Ländlich")) -> raw.short$urban
 
-## Feedback JRH: Sie haben vergessen, raw.short$ef in einen factor umzuwandeln. Das ist kritisch, denn Sie haben eine Hypothese dazu.
+raw.short$ef %>% 
+  ordered(levels = c(1:6),
+          labels = c("vegan",
+                     "vegetarisch",
+                     "omni",
+                     "omni",
+                     "omni",
+                     "omni")) -> raw.short$ef
+
 
 # Qualitätskontrolle ----
 
@@ -141,15 +130,15 @@ raw.short$urban %>%
 
 schluesselliste <- list(
   SMK = c("sm1_1", "sm1_2", "sm1_3", "sm1_4", "sm1_5", "sm1_6", "sm1_7"),
-  PO = c("orientation1_1", "orientation1_2", "orientation1_3", "orientation1_4", "orientation1_5", "orientation1_6", "orientation1_7", "orientation1_8", "orientation2_1", "orientation2_2", "orientation2_3", "orientation2_4", "activism1", "activism2", "sciencescepticism_1", "-sciencescepticism_2", "-sciencescepticism_3"),
-  SPP = c("orientation1_1", "orientation1_2", "orientation1_3", "orientation1_4", "orientation1_5", "orientation1_6", "orientation1_7", "orientation1_8"),
-  MV = c("auto1", "auto2", "auto3", "freq_transport_1", "freq_transport_2", "freq_transport_3", "freq_transport_4", "freq_transport_5", "freq_transport_6", "freq_transport_7", "like_transport_1", "like_transport_2", "like_transport_3", "like_transport_4","like_transport_5", "like_transport_6","like_transport_7"),
+  PO = c("orientation2_1", "orientation2_2", "orientation2_3", "orientation2_4"),
   PBE = c("bedrohung1", "-bedrohung2", "bedrohung3", "bedrohung4","bedrohung5", "bedrohung6"),
   BEK = c("bereitschaft1", "bereitschaft2", "bereitschaft3", "bereitschaft4", "bereitschaft5", "bereitschaft6")
 )
 
 
 scores <- scoreItems(schluesselliste, items = raw.short, missing = TRUE, min = 1, max = 6)
+
+scores$alpha
 
 data <- bind_cols(raw.short, as_tibble(scores$scores))
 

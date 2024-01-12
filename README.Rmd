@@ -65,6 +65,8 @@ Abstract-Info
 # cor.test(PBE, BEK, method = "pearson", alternative = "two.sided") 
 ## Feedback JRH: Ja, fast:
 cor.test(df$PBE, df$BEK, method = "pearson", alternative = "two.sided") 
+
+
 ```
 
 
@@ -80,9 +82,13 @@ cor.test(df$SMK, df$PBE, method = "pearson", alternative = "two.sided")
 * "Die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen ist abhängig von der Sympathie für politische Parteien." 
 
 ```{r}
-#model <- lm(BEK ~ SPP, data = Daten) 
-#   summary(model) 
-## Feedback JRH: Leider nein. Ihre UVs sind die Werte für die Bewertung der einzelnen Parteien. Bitte jmv::linReg() verwenden. 
+jmv::linReg(data = df, 
+            dep = c("BEK"), 
+            covs = c("orientation1_1", "orientation1_2","orientation1_3", "orientation1_4", 
+                     "orientation1_5", "orientation1_6", "orientation1_7", "orientation1_8"), 
+            blocks = c("orientation1_1", "orientation1_2","orientation1_3", "orientation1_4", 
+                       "orientation1_5", "orientation1_6", "orientation1_7", "orientation1_8"),
+            stdEst = T, modelTest = T, r2Adj = TRUE)
 ```
 
   
