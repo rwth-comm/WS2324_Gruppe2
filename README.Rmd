@@ -123,11 +123,15 @@ jmv::linReg(data = df,
 
 * **Unterschiedshypothesen** 
 
-* "Das persönliche Bedrohungsempfinden bezüglich des Klimawandels unterscheidet sich bei Personen mit hohem und niedrigem  Social-Media-Konsum. (einfacher Unterschied)" 
+* "Das persönliche Bedrohungsempfinden bezüglich des Klimawandels unterscheidet sich bei Personen mit hohem und niedrigem  Social-Media-Konsum. (unverbundener T-Test)"
 
-```{r}
+```{r unpairedttest, echo=FALSE}
 
-t.test
+df$SMK <- cut(df$SMK, labels = c("niedrig", "hoch"), breaks = c(-Inf, median(df$SMK), Inf))
+
+t.test(filter(df, df$SMK == "niedrig")$SMK,
+       filter(df, df$SMK == "hoch")$SMK)
+
 ```
 
 
