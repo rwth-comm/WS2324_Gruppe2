@@ -169,3 +169,4 @@ ggplot(raw.short) +
  title = "Stichprobe", subtitle = paste0("Altersverteilung im Histogramm (n=",nrow(raw.short), ")") )+
  theme_minimal()
 
+

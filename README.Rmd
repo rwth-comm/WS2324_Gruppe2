@@ -140,22 +140,19 @@ t.test(filter(df, df$ef == "vegan")$BEK,
 
 * "Das persönliche Bedrohungsempfinden bezüglich des Klimawandels unterscheidet sich bei Personen mit linker politischer Orientierung und bei Personen mit rechter politischer Orientierung." 
 
-```{r unpairedttest, echo=FALSE}
+```{r}
 
+df$leftparty <- rowMeans(df[,c("orientation1_1", "orientation1_3", "orientation1_6")], na.rm = TRUE)
+df$rightparty <- rowMeans(df[,c("orientation1_2", "orientation1_5")], na.rm = TRUE)
 
-df %>% 
-  recode(df$PO,
-  "orientation1_2" = "rechts",
-  "orientation1_5" = "rechts",
-  "orientation1_1" = "links",
-  "orientation1_3" = "links",
-  .default = NA_character_)
-  filter(PO > 3) %>% 
-  droplevels() %>%
-  t.test(df$PO == "rechts"$PBE,
-       (df$PO == "links"$PBE))
+df %>% mutate(linksrechts = case_when(leftparty == rightparty ~ NA, 
+                               leftparty > rightparty ~ "links",
+                               leftparty < rightparty ~ "rechts")) -> df
 
-  gr
+df$linksrechts <- as.factor(df$linksrechts)
+
+t.test(filter(df, df$linksrechts == "links")$PBE, 
+       filter(df, df$linksrechts == "rechts")$PBE)
 ```
 
   
