@@ -76,19 +76,13 @@ ggplot(df) +
 * "Es gibt einen Zusammenhang zwischen dem persönlichen Bedrohungsempfinden und der Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen. (ungerichtete Korrelation)" 
 
 ```{r}
-# cor.test(PBE, BEK, method = "pearson", alternative = "two.sided") 
-## Feedback JRH: Ja, fast:
 cor.test(df$PBE, df$BEK, method = "pearson", alternative = "two.sided") 
-
-
 ```
 
 
 * "Je häufiger Social-Media konsumiert wird, desto höher ist das persönliche Bedrohungsempfinden bezüglich des Klimawandels. (lineare Regression)"
 
 ```{r}
-# cor.test(SMK, PBE, method = "pearson", alternative = "greater") 
-## Feedback JRH: Stark, dass Sie die Hypothese gerichtet umgesetzt haben! Es ist aber Korrelation, nicht Regression. 
 cor.test(df$SMK, df$PBE, method = "pearson", alternative = "two.sided") 
 ```
 
@@ -100,8 +94,8 @@ jmv::linReg(data = df,
             dep = c("BEK"), 
             covs = c("orientation1_1", "orientation1_2","orientation1_3", "orientation1_4", 
                      "orientation1_5", "orientation1_6", "orientation1_7", "orientation1_8"), 
-            blocks = c("orientation1_1", "orientation1_2","orientation1_3", "orientation1_4", 
-                       "orientation1_5", "orientation1_6", "orientation1_7", "orientation1_8"),
+            blocks = c("orientation1_5", "orientation1_7","orientation1_3", "orientation1_1", 
+                       "orientation1_6", "orientation1_8", "orientation1_2", "orientation1_4"),
             stdEst = T, modelTest = T, r2Adj = TRUE)
 ```
 
@@ -116,8 +110,6 @@ jmv::linReg(data = df,
             covs = c("SMK", "PBE"),
             blocks = c("SMK", "PBE"),
             stdEst = T, modelTest = T, r2Adj = TRUE)
-
-
 ```
   
 
@@ -127,10 +119,10 @@ jmv::linReg(data = df,
 
 ```{r unpairedttest, echo=FALSE}
 
-df$SMK <- cut(df$SMK, labels = c("niedrig", "hoch"), breaks = c(-Inf, median(df$SMK), Inf))
+df$konsumgroup <- cut(df$SMK, labels = c("hoch", "niedrig"), breaks = c(-Inf, median(df$SMK), Inf))
 
-t.test(filter(df, df$SMK == "niedrig")$SMK,
-       filter(df, df$SMK == "hoch")$SMK)
+t.test(filter(df, df$konsumgroup == "hoch")$PBE,
+       filter(df, df$konsumgroup == "niedrig")$PBE)
 
 ```
 
@@ -148,9 +140,22 @@ t.test(filter(df, df$ef == "vegan")$BEK,
 
 * "Das persönliche Bedrohungsempfinden bezüglich des Klimawandels unterscheidet sich bei Personen mit linker politischer Orientierung und bei Personen mit rechter politischer Orientierung." 
 
-```{r}
+```{r unpairedttest, echo=FALSE}
 
-t.test
+
+df %>% 
+  recode(df$PO,
+  "orientation1_2" = "rechts",
+  "orientation1_5" = "rechts",
+  "orientation1_1" = "links",
+  "orientation1_3" = "links",
+  .default = NA_character_)
+  filter(PO > 3) %>% 
+  droplevels() %>%
+  t.test(df$PO == "rechts"$PBE,
+       (df$PO == "links"$PBE))
+
+  gr
 ```
 
   
@@ -158,8 +163,17 @@ t.test
 
 * "Geschlecht, Wohnort und Ernährungsform haben bei kontrolliertem Alterseinfluss einen Einfluss auf das persönliche Bedrohungsempfinden und auf die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen."
 
-```{r}
-jmv::mancova(data = df, factors = c("gender", "urban", "ef"), deps = c("PBE", "BEK"), covs = c(age), multivar = list("pillai", "wilks", "hotel", "roy"))
+```{r mancova, echo=FALSE}
+#jmv::mancova(data = df, factors = c("urban", "ef"), deps = c("PBE", "BEK"), covs = c(age), multivar = list("pillai", "wilks", "hotel", "roy"))
+
+df %>% 
+  filter(ef != "vegan") %>% 
+  droplevels() %>%
+  jmv::mancova(dep = c(PBE, BEK), 
+               covs = age,
+               factors = c("urban", "ef"))
+
+
 ```
 
 ## Variablennamen/ Legende
