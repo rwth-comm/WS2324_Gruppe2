@@ -8,6 +8,11 @@ output: md_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 df <- readRDS("data/dataFromNumeric.rds")
+
+library(tidyverse)
+library(psych)
+library(jmv)
+source("qualtricshelpers.R")
 ```
 
 # Verhaltensänderung beim Klimawandel
@@ -65,7 +70,8 @@ ggplot(df) +
  aes(x = age) +
  geom_histogram(bins = 30L, fill = "#112446") +
  labs(x = "Alter in Jahren", y = "Anzahl", 
- title = "Stichprobe", subtitle = paste0("Altersverteilung im Histogramm (n=",nrow(df), ")") )+
+ title = "Stichprobe", 
+ subtitle = paste0("Altersverteilung im Histogramm (n=",nrow(df), ")") )+
  theme_minimal()
 
 ```
@@ -94,7 +100,7 @@ jmv::linReg(data = df,
             dep = c("BEK"), 
             covs = c("orientation1_1", "orientation1_2","orientation1_3", "orientation1_4", 
                      "orientation1_5", "orientation1_6", "orientation1_7", "orientation1_8"), 
-            blocks = c("orientation1_5", "orientation1_7","orientation1_3", "orientation1_1", 
+            blocks = c("orientation1_7", "orientation1_5","orientation1_3", "orientation1_1", 
                        "orientation1_6", "orientation1_8", "orientation1_2", "orientation1_4"),
             stdEst = T, modelTest = T, r2Adj = TRUE)
 ```
@@ -108,7 +114,7 @@ jmv::linReg(data = df,
 jmv::linReg(data = df,
             dep = c("BEK"),
             covs = c("SMK", "PBE"),
-            blocks = c("SMK", "PBE"),
+            blocks = c("PBE", "SMK"),
             stdEst = T, modelTest = T, r2Adj = TRUE)
 ```
   
@@ -119,7 +125,9 @@ jmv::linReg(data = df,
 
 ```{r unpairedttest, echo=FALSE}
 
-df$konsumgroup <- cut(df$SMK, labels = c("hoch", "niedrig"), breaks = c(-Inf, median(df$SMK), Inf))
+df$konsumgroup <- cut(df$SMK, 
+                      labels = c("hoch", "niedrig"), 
+                      breaks = c(-Inf, median(df$SMK), Inf))
 
 t.test(filter(df, df$konsumgroup == "hoch")$PBE,
        filter(df, df$konsumgroup == "niedrig")$PBE)
