@@ -280,31 +280,31 @@ df %>%
   droplevels() %>%
   jmv::ancova(dep = PBE, 
                covs = age,
-               factors = c("urban", "ef")) -> he1
+               factors = c("urban", "ef"),
+              emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("urban"),c("ef"))) -> res1
 df %>% 
   filter(ef != "vegan") %>% 
   droplevels() %>%
   jmv::ancova(dep = BEK, 
                covs = age,
-               factors = c("urban", "ef")) -> he2
+               factors = c("urban", "ef"),
+              emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("urban"),c("ef"))) -> res2
 
-df %>% 
-  filter(gender != "rather not say") %>% 
-  droplevels() %>%
-  jmv::ancova(dep = diff_pref, 
-              covs = age,
-               factors = c("gender", "jobtypegroup"),
-             emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("gender"), c("jobtypegroup"),
-                                                                c("gender", "jobtypegroup"),
-                                                                c("jobtypegroup", "gender"))) -> mancova2
 
-mancova1he1 <- mancova1$emm[[1]]$emmTable$asDF
-mancova1he2 <- mancova1$emm[[2]]$emmTable$asDF
-mancova1ie <- mancova1$emm[[3]]$emmTable$asDF
+haupteffekt1 <- res1$emm[[1]]$emmTable$asDF
+haupteffekt2 <- res1$emm[[2]]$emmTable$asDF
 
-mancova2he1 <- mancova2$emm[[1]]$emmTable$asDF
-mancova2he2 <- mancova2$emm[[2]]$emmTable$asDF
-mancova2ie <- mancova2$emm[[3]]$emmTable$asDF
+haupteffekt3 <- res1$emm[[1]]$emmTable$asDF
+haupteffekt4 <- res1$emm[[2]]$emmTable$asDF
+
+
+haupteffekt1 %>% 
+ggplot() +
+ aes(x = urban, y = mean, ymin = lower, ymax = upper) +
+    geom_errorbar(colour = "black", width = 0.2) +
+ geom_point() +
+ theme_minimal()
+
 
 ```
 
