@@ -65,7 +65,7 @@ Abstract-Info
 
 ### Altersverteilung der Stichprobe im Histogramm
 
-```{r}
+```{r, echo=FALSE}
 library(ggplot2)
 
 ggplot(df) +
@@ -77,7 +77,7 @@ ggplot(df) +
  theme_minimal()
 
 ```
-```{r}
+```{r, echo=FALSE}
 descriptives <- psych::describe(df)[c(42:45),c(3,4,5,8,9)]
 descriptives$alpha <- c(0.37, 0.88, 0.68, 0.81)
 descriptives[,c(6,1:5)]
@@ -89,11 +89,11 @@ descriptives[,c(6,1:5)]
 
 * "Es gibt einen Zusammenhang zwischen dem persönlichen Bedrohungsempfinden und der Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen. (ungerichtete Korrelation)" 
 
-```{r}
+```{r, echo=FALSE}
 cor.test(df$PBE, df$BEK, method = "pearson", alternative = "two.sided") 
 ```
 
-```{r}
+```{r, echo=FALSE}
 ggplot(df) +
   aes(x = PBE, y = BEK) +
   geom_jitter(shape = 21, size = 1.8, colour = rwthcolor$turquois, fill = rwthcolor$turquois, alpha = 0.6) +
@@ -113,11 +113,11 @@ ggplot(df) +
 
 * "Je häufiger Social-Media konsumiert wird, desto höher ist das persönliche Bedrohungsempfinden bezüglich des Klimawandels."
 
-```{r}
+```{r, echo=FALSE}
 cor.test(df$SMK, df$PBE, method = "pearson", alternative = "two.sided") 
 ```
 
-```{r}
+```{r, echo=FALSE}
 ggplot(df) +
   aes(x = PBE, y = SMK) +
   geom_jitter(shape = 21, size = 1.8, colour = rwthcolor$turquois, fill = rwthcolor$turquois, alpha = 0.6) +
@@ -137,7 +137,7 @@ ggplot(df) +
 
 * "Die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen ist abhängig von der Sympathie für politische Parteien." 
 
-```{r}
+```{r, echo=FALSE}
 jmv::linReg(data = df, 
             dep = c("BEK"), 
             covs = c("orientation1_1", "orientation1_2","orientation1_3", "orientation1_4", 
@@ -152,7 +152,7 @@ jmv::linReg(data = df,
 
 * "Hoher Social-Media-Konsum und ein hohes persönliches Bedrohungsempfinden sorgen für eine erhöhte Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen." 
 
-```{r}
+```{r, echo=FALSE}
 jmv::linReg(data = df,
             dep = c("BEK"),
             covs = c("SMK", "PBE"),
@@ -165,7 +165,7 @@ jmv::linReg(data = df,
 
 * "Das persönliche Bedrohungsempfinden bezüglich des Klimawandels unterscheidet sich bei Personen mit hohem und niedrigem  Social-Media-Konsum. (unverbundener T-Test)"
 
-```{r unpairedttest, echo=FALSE}
+```{r, echo=FALSE}
 
 df$konsumgroup <- cut(df$SMK, 
                       labels = c("hoch", "niedrig"), 
@@ -176,7 +176,7 @@ t.test(filter(df, df$konsumgroup == "hoch")$PBE,
 
 ```
 
-```{r}
+```{r, echo=FALSE}
 df %>%
 group_by(konsumgroup) %>%
 summarise(mean = mean(PBE)-1, sem_PBE = std.error(PBE)) %>%
@@ -200,14 +200,14 @@ ggplot() +
 * "Die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen unterscheidet sich bei Personen mit veganem Ernährungsverhalten im Gegensatz zu Personen mit uneingeschränktem Ernährungsverhalten." 
 
 # Unverbundener T-Test:
-```{r} 
+```{r, echo=FALSE} 
 
 t.test(filter(df, df$ef == "vegan")$BEK, 
        filter(df, df$ef == "omni")$BEK)
 
 ```
 
-```{r}
+```{r, echo=FALSE}
 df %>%
   group_by(ef) %>%
  filter(!(ef %in% "vegetarisch")) %>%
@@ -231,7 +231,7 @@ ggplot() +
 
 * "Das persönliche Bedrohungsempfinden bezüglich des Klimawandels unterscheidet sich bei Personen mit linker politischer Orientierung und bei Personen mit rechter politischer Orientierung." 
 
-```{r}
+```{r, echo=FALSE}
 
 df$leftparty <- rowMeans(df[,c("orientation1_1", "orientation1_3", "orientation1_6")], na.rm = TRUE)
 df$rightparty <- rowMeans(df[,c("orientation1_2", "orientation1_5")], na.rm = TRUE)
@@ -245,7 +245,7 @@ df$linksrechts <- as.factor(df$linksrechts)
 t.test(filter(df, df$linksrechts == "links")$PBE, 
        filter(df, df$linksrechts == "rechts")$PBE)
 ```
-```{r}
+```{r, echo=FALSE}
 df %>%
   group_by(linksrechts) %>%
   filter(!is.na(linksrechts)) %>%
@@ -316,8 +316,8 @@ ggplot() +
   labs(
     x = "Wohnort",
     y = "persönliches Bedrohungsempfinden (1- 5)",
-    title = "T-Test zur Unterschiedshypothese",
-    subtitle = "Gruppenvergleich von Personen mit linker oder rechter politischer Orientierung \nbezüglich ihres persönlichen Bedrohungsempfindens",
+    title = "Mancova",
+    subtitle = "Einfluss des Wohnortes auf das persönliche Bedrohungsempfinden bei kontrolliertem Alterseinfluss",
     caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
   ) +
  theme_minimal()
@@ -333,8 +333,8 @@ ggplot() +
   labs(
     x = "Ernährungsform",
     y = "Bereitschaft zum Ergreifen der Maßnahmen (1- 5)",
-    title = "T-Test zur Unterschiedshypothese",
-    subtitle = "Gruppenvergleich von Personen mit linker oder rechter politischer Orientierung \nbezüglich ihres persönlichen Bedrohungsempfindens",
+    title = "Mancova",
+    subtitle = "Einfluss der Ernährungsform auf das persönliche Bedrohungsempfinden bei kontrolliertem Alterseinfluss",
     caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
   ) +
  theme_minimal()
@@ -351,8 +351,8 @@ ggplot() +
   labs(
     x = "Wohnort",
     y = "persönliches Bedrohungsempfinden (1- 5)",
-    title = "T-Test zur Unterschiedshypothese",
-    subtitle = "Gruppenvergleich von Personen mit linker oder rechter politischer Orientierung \nbezüglich ihres persönlichen Bedrohungsempfindens",
+    title = "Mancova",
+    subtitle = "Einfluss des Wohnortes auf die Bereitschaft zum Ergreifen von Maßnahmen bei kontrolliertem Alterseinfluss",
     caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
   ) +
  theme_minimal()
@@ -370,8 +370,8 @@ ggplot() +
   labs(
     x = "Ernährungsform",
     y = "Bereitschaft zum Ergreifen der Maßnahmen (1- 5)",
-    title = "T-Test zur Unterschiedshypothese",
-    subtitle = "Gruppenvergleich von Personen mit linker oder rechter politischer Orientierung \nbezüglich ihres persönlichen Bedrohungsempfindens",
+    title = "Mancova",
+    subtitle = "Einfluss der Ernährunsform auf die Bereitschaft zum Ergreifen von Maßnahmen bei kontrolliertem Alterseinfluss",
     caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
   ) +
  theme_minimal()

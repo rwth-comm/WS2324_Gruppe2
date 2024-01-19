@@ -97,21 +97,7 @@ alt="Faktorenraum" />
 
 ### Altersverteilung der Stichprobe im Histogramm
 
-    library(ggplot2)
-
-    ggplot(df) +
-     aes(x = age) +
-     geom_histogram(bins = 30L, fill = "#112446") +
-     labs(x = "Alter in Jahren", y = "Anzahl", 
-     title = "Stichprobe", 
-     subtitle = paste0("Altersverteilung im Histogramm (n=",nrow(df), ")") )+
-     theme_minimal()
-
 ![](README_files/figure-markdown_strict/unnamed-chunk-1-1.png)
-
-    descriptives <- psych::describe(df)[c(42:45),c(3,4,5,8,9)]
-    descriptives$alpha <- c(0.37, 0.88, 0.68, 0.81)
-    descriptives[,c(6,1:5)]
 
     ##     alpha mean   sd median min max
     ## SMK  0.37 2.51 0.71   2.43   1 5.0
@@ -129,8 +115,6 @@ alt="Faktorenraum" />
 
 <!-- -->
 
-    cor.test(df$PBE, df$BEK, method = "pearson", alternative = "two.sided") 
-
     ## 
     ##  Pearson's product-moment correlation
     ## 
@@ -143,28 +127,12 @@ alt="Faktorenraum" />
     ##       cor 
     ## 0.4972108
 
-    ggplot(df) +
-      aes(x = PBE, y = BEK) +
-      geom_jitter(shape = 21, size = 1.8, colour = rwthcolor$turquois, fill = rwthcolor$turquois, alpha = 0.6) +
-      labs(
-        x = "persönliches Bedrohungsempfinden (1- 6)",
-        y = "Bereitschaft zum Ergreifen der Maßnahmen (1- 6)",
-        title = "Korrelation der Zusammenhangshypothese",
-        subtitle = "Zusammenhang zwischen persönlichem Bedrohungsempfinden und der Bereitschaft \nzum Ergreifen von Klimaschutzmaßnhamen",
-        caption = " "
-      ) +
-      theme_minimal() +
-      scale_x_continuous(breaks = c(1:6), limits = c(0.5, 6.5)) +
-      scale_y_continuous(breaks = c(1:6), limits = c(0.5, 6.5))
-
 ![](README_files/figure-markdown_strict/unnamed-chunk-4-1.png)
 
 -   “Je häufiger Social-Media konsumiert wird, desto höher ist das
     persönliche Bedrohungsempfinden bezüglich des Klimawandels.”
 
 <!-- -->
-
-    cor.test(df$SMK, df$PBE, method = "pearson", alternative = "two.sided") 
 
     ## 
     ##  Pearson's product-moment correlation
@@ -178,34 +146,12 @@ alt="Faktorenraum" />
     ##       cor 
     ## 0.1476144
 
-    ggplot(df) +
-      aes(x = PBE, y = SMK) +
-      geom_jitter(shape = 21, size = 1.8, colour = rwthcolor$turquois, fill = rwthcolor$turquois, alpha = 0.6) +
-      labs(
-        x = "persönliches Bedrohungsempfinden (1- 6)",
-        y = "Social-Media Konsum (1- 6)",
-        title = "Korrelation der Zusammenhangshypothese",
-        subtitle = "Zusammenhang zwischen persönlichem Bedrohungsempfinden und dem Social-Media Konsum",
-        caption = " "
-      ) +
-      theme_minimal() +
-      scale_x_continuous(breaks = c(1:6), limits = c(0.5, 6)) +
-     scale_y_continuous(breaks = c(1:6), limits = c(0.5, 6))
-
 ![](README_files/figure-markdown_strict/unnamed-chunk-6-1.png)
 
 -   “Die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen ist
     abhängig von der Sympathie für politische Parteien.”
 
 <!-- -->
-
-    jmv::linReg(data = df, 
-                dep = c("BEK"), 
-                covs = c("orientation1_1", "orientation1_2","orientation1_3", "orientation1_4", 
-                         "orientation1_5", "orientation1_6", "orientation1_7", "orientation1_8"), 
-                blocks = c("orientation1_7", "orientation1_5","orientation1_3", "orientation1_1", 
-                           "orientation1_6", "orientation1_8", "orientation1_2", "orientation1_4"),
-                stdEst = T, modelTest = T, r2Adj = TRUE)
 
     ## 
     ##  LINEAR REGRESSION
@@ -364,12 +310,6 @@ alt="Faktorenraum" />
 
 <!-- -->
 
-    jmv::linReg(data = df,
-                dep = c("BEK"),
-                covs = c("SMK", "PBE"),
-                blocks = c("PBE", "SMK"),
-                stdEst = T, modelTest = T, r2Adj = TRUE)
-
     ## 
     ##  LINEAR REGRESSION
     ## 
@@ -434,34 +374,13 @@ alt="Faktorenraum" />
     ## mean of x mean of y 
     ##  4.324468  4.532609
 
-    df %>%
-    group_by(konsumgroup) %>%
-    summarise(mean = mean(PBE)-1, sem_PBE = std.error(PBE)) %>%
-    ggplot() +
-      aes(x = konsumgroup, weight = mean, ymin = mean - sem_PBE, ymax = mean + sem_PBE, fill = konsumgroup) +
-      geom_bar(show.legend = FALSE) +
-      scale_fill_manual(values = c(rwthcolor$turquois, rwthcolor$green)) +
-      geom_errorbar(width = 0.2) +
-      labs(
-        x = "Social-Media Konsum",
-        y = "persönliches Bedrohungsempfinden (1- 5)",
-        title = "T-Test zur Unterschiedshypothese",
-        subtitle = "Gruppenvergleich von Personen mit hohem und niedrigem Social-Media Konsum bezüglich \nihres persönlichen Bedrohungsempfindens",
-        caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
-      ) +
-      theme_minimal() +
-      scale_y_continuous(breaks = c(0:5), limits = c(0, 5))
-
-![](README_files/figure-markdown_strict/unnamed-chunk-9-1.png)
+![](README_files/figure-markdown_strict/unnamed-chunk-10-1.png)
 
 -   “Die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen
     unterscheidet sich bei Personen mit veganem Ernährungsverhalten im
     Gegensatz zu Personen mit uneingeschränktem Ernährungsverhalten.”
 
 # Unverbundener T-Test:
-
-    t.test(filter(df, df$ef == "vegan")$BEK, 
-           filter(df, df$ef == "omni")$BEK)
 
     ## 
     ##  Welch Two Sample t-test
@@ -475,44 +394,13 @@ alt="Faktorenraum" />
     ## mean of x mean of y 
     ##  5.194444  3.947183
 
-    df %>%
-      group_by(ef) %>%
-     filter(!(ef %in% "vegetarisch")) %>%
-     summarise(mean = mean(BEK)-1, sem_BEK = std.error(BEK)) %>%
-    ggplot() +
-      aes(x = ef, weight = mean, ymin = mean - sem_BEK, ymax = mean + sem_BEK, fill = ef) + 
-      geom_bar(show.legend = FALSE) +
-      scale_fill_manual(values = c(rwthcolor$turquois, rwthcolor$green)) +
-      geom_errorbar(width = 0.2) +
-      labs(
-        x = "Ernährungsform",
-        y = "Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen (1- 5)",
-        title = "T-Test zur Unterschiedshypothese",
-        subtitle = "Gruppenvergleich von Personen mit veganem und uneingeschränktem (omni) Essverhalten \nbezüglich ihres persönlichen Bedrohungsempfindens",
-        caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
-      ) +
-      theme_minimal() +
-      scale_y_continuous(breaks = c(0:5), limits = c(0, 5))
-
-![](README_files/figure-markdown_strict/unnamed-chunk-11-1.png)
+![](README_files/figure-markdown_strict/unnamed-chunk-12-1.png)
 
 -   “Das persönliche Bedrohungsempfinden bezüglich des Klimawandels
     unterscheidet sich bei Personen mit linker politischer Orientierung
     und bei Personen mit rechter politischer Orientierung.”
 
 <!-- -->
-
-    df$leftparty <- rowMeans(df[,c("orientation1_1", "orientation1_3", "orientation1_6")], na.rm = TRUE)
-    df$rightparty <- rowMeans(df[,c("orientation1_2", "orientation1_5")], na.rm = TRUE)
-
-    df %>% mutate(linksrechts = case_when(leftparty == rightparty ~ NA, 
-                                   leftparty > rightparty ~ "links",
-                                   leftparty < rightparty ~ "rechts")) -> df
-
-    df$linksrechts <- as.factor(df$linksrechts)
-
-    t.test(filter(df, df$linksrechts == "links")$PBE, 
-           filter(df, df$linksrechts == "rechts")$PBE)
 
     ## 
     ##  Welch Two Sample t-test
@@ -526,26 +414,7 @@ alt="Faktorenraum" />
     ## mean of x mean of y 
     ##  4.583990  4.104762
 
-    df %>%
-      group_by(linksrechts) %>%
-      filter(!is.na(linksrechts)) %>%
-     summarise(mean = mean(PBE)-1, sem_PBE = std.error(PBE)) %>%
-    ggplot() +
-      aes(x = linksrechts, weight = mean, ymin = mean - sem_PBE, ymax = mean + sem_PBE, fill = linksrechts) + 
-      geom_bar(show.legend = FALSE) +
-      scale_fill_manual(values = c(rwthcolor$turquois, rwthcolor$green)) +
-      geom_errorbar(width = 0.2) +
-      labs(
-        x = "Sympathie für politische Parteien",
-        y = "persönliches Bedrohungsempfinden (1- 5)",
-        title = "T-Test zur Unterschiedshypothese",
-        subtitle = "Gruppenvergleich von Personen mit linker oder rechter politischer Orientierung \nbezüglich ihres persönlichen Bedrohungsempfindens",
-        caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
-      ) +
-      theme_minimal() +
-      scale_y_continuous(breaks = c(0:5), limits = c(0, 5))
-
-![](README_files/figure-markdown_strict/unnamed-chunk-13-1.png)
+![](README_files/figure-markdown_strict/unnamed-chunk-14-1.png)
 
 -   **MANCOVA**
 
