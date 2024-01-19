@@ -13,6 +13,7 @@ library(tidyverse)
 library(psych)
 library(jmv)
 source("qualtricshelpers.R")
+rwthcolor <- hcictools::rwth.colorpalette()
 ```
 
 # Verhaltensänderung beim Klimawandel
@@ -93,24 +94,23 @@ cor.test(df$PBE, df$BEK, method = "pearson", alternative = "two.sided")
 
 ```{r}
 ggplot(df) +
-  aes(x = BEK, y = PBE) +
-  geom_point(
-    shape = "circle",
-    size = 1.65,
-    colour = "#112446"
-  ) +
+  aes(x = PBE, y = BEK) +
+  geom_jitter(shape = 21, size = 1.8, colour = rwthcolor$turquois, fill = rwthcolor$turquois, alpha = 0.6) +
   labs(
-    x = "Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen ",
-    y = "persönliches Bedrohungsempfinden ",
-    title = " ",
-    subtitle = " ",
+    x = "persönliches Bedrohungsempfinden (1- 6)",
+    y = "Bereitschaft zum Ergreifen der Maßnahmen (1- 6)",
+    title = "Korrelation der Zusammenhangshypothese",
+    subtitle = "Zusammenhang zwischen persönlichem Bedrohungsempfinden und der Bereitschaft \nzum Ergreifen von Klimaschutzmaßnhamen",
     caption = " "
   ) +
-  theme_minimal()
+  theme_minimal() +
+  scale_x_continuous(breaks = c(1:6), limits = c(0.5, 6.5)) +
+  scale_y_continuous(breaks = c(1:6), limits = c(0.5, 6.5))
+
 ```
 
 
-* "Je häufiger Social-Media konsumiert wird, desto höher ist das persönliche Bedrohungsempfinden bezüglich des Klimawandels. (lineare Regression)"
+* "Je häufiger Social-Media konsumiert wird, desto höher ist das persönliche Bedrohungsempfinden bezüglich des Klimawandels."
 
 ```{r}
 cor.test(df$SMK, df$PBE, method = "pearson", alternative = "two.sided") 
@@ -119,19 +119,18 @@ cor.test(df$SMK, df$PBE, method = "pearson", alternative = "two.sided")
 ```{r}
 ggplot(df) +
   aes(x = PBE, y = SMK) +
-  geom_point(
-    shape = "circle",
-    size = 1.65,
-    colour = "#112446"
-  ) +
+  geom_jitter(shape = 21, size = 1.8, colour = rwthcolor$turquois, fill = rwthcolor$turquois, alpha = 0.6) +
   labs(
-    x = "persönliches Bedrohungsempfinden",
-    y = "Social-Media Konsum",
-    title = " ",
-    subtitle = " ",
+    x = "persönliches Bedrohungsempfinden (1- 6)",
+    y = "Social-Media Konsum (1- 6)",
+    title = "Korrelation der Zusammenhangshypothese",
+    subtitle = "Zusammenhang zwischen persönlichem Bedrohungsempfinden und dem Social-Media Konsum",
     caption = " "
   ) +
-  theme_minimal()
+  theme_minimal() +
+  scale_x_continuous(breaks = c(1:6), limits = c(0.5, 6)) +
+ scale_y_continuous(breaks = c(1:6), limits = c(0.5, 6))
+
 ```
 
 
@@ -178,16 +177,18 @@ t.test(filter(df, df$konsumgroup == "hoch")$PBE,
 
 ```{r}
 ggplot(df) +
-  aes(x = PBE, y = konsumgroup) +
-  geom_boxplot(fill = "#112446") +
+  aes(x = PBE, y = konsumgroup, fill = konsumgroup) +
+  geom_boxplot() +
+  scale_fill_manual(values = c(rwthcolor$turquois, rwthcolor$green)) +
   labs(
-    x = "persönliches Bedrohungsempfinden",
+    x = "persönliches Bedrohungsempfinden (1- 6)",
     y = "Social-Media Konsum",
-    title = " ",
-    subtitle = " ",
-    caption = " "
+    title = "T-Test zur Unterschiedshypothese",
+    subtitle = "Gruppenvergleich von Personen mit hohem und niedrigem Social-Media Konsum bezüglich \nihres persönlichen Bedrohungsempfindens",
+    caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
   ) +
-  theme_minimal()
+  theme_minimal() +
+  scale_x_continuous(breaks = c(1:6), limits = c(1, 6))
 ```
 
 
