@@ -109,6 +109,16 @@ alt="Faktorenraum" />
 
 ![](README_files/figure-markdown_strict/unnamed-chunk-1-1.png)
 
+    descriptives <- psych::describe(df)[c(42:45),c(3,4,5,8,9)]
+    descriptives$alpha <- c(0.37, 0.88, 0.68, 0.81)
+    descriptives[,c(6,1:5)]
+
+    ##     alpha mean   sd median min max
+    ## SMK  0.37 2.51 0.71   2.43   1 5.0
+    ## PO   0.88 4.40 1.08   4.50   1 6.0
+    ## PBE  0.68 4.43 0.72   4.50   1 5.5
+    ## BEK  0.81 4.16 0.94   4.33   1 6.0
+
 ## Hypothesen
 
 -   **Zusammenhangshypothesen**
@@ -134,26 +144,23 @@ alt="Faktorenraum" />
     ## 0.4972108
 
     ggplot(df) +
-      aes(x = BEK, y = PBE) +
-      geom_point(
-        shape = "circle",
-        size = 1.65,
-        colour = "#112446"
-      ) +
+      aes(x = PBE, y = BEK) +
+      geom_jitter(shape = 21, size = 1.8, colour = rwthcolor$turquois, fill = rwthcolor$turquois, alpha = 0.6) +
       labs(
-        x = "Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen ",
-        y = "persönliches Bedrohungsempfinden ",
-        title = " ",
-        subtitle = " ",
+        x = "persönliches Bedrohungsempfinden (1- 6)",
+        y = "Bereitschaft zum Ergreifen der Maßnahmen (1- 6)",
+        title = "Korrelation der Zusammenhangshypothese",
+        subtitle = "Zusammenhang zwischen persönlichem Bedrohungsempfinden und der Bereitschaft \nzum Ergreifen von Klimaschutzmaßnhamen",
         caption = " "
       ) +
-      theme_minimal()
+      theme_minimal() +
+      scale_x_continuous(breaks = c(1:6), limits = c(0.5, 6.5)) +
+      scale_y_continuous(breaks = c(1:6), limits = c(0.5, 6.5))
 
-![](README_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+![](README_files/figure-markdown_strict/unnamed-chunk-4-1.png)
 
 -   “Je häufiger Social-Media konsumiert wird, desto höher ist das
-    persönliche Bedrohungsempfinden bezüglich des Klimawandels. (lineare
-    Regression)”
+    persönliche Bedrohungsempfinden bezüglich des Klimawandels.”
 
 <!-- -->
 
@@ -173,21 +180,19 @@ alt="Faktorenraum" />
 
     ggplot(df) +
       aes(x = PBE, y = SMK) +
-      geom_point(
-        shape = "circle",
-        size = 1.65,
-        colour = "#112446"
-      ) +
+      geom_jitter(shape = 21, size = 1.8, colour = rwthcolor$turquois, fill = rwthcolor$turquois, alpha = 0.6) +
       labs(
-        x = "persönliches Bedrohungsempfinden",
-        y = "Social-Media Konsum",
-        title = " ",
-        subtitle = " ",
+        x = "persönliches Bedrohungsempfinden (1- 6)",
+        y = "Social-Media Konsum (1- 6)",
+        title = "Korrelation der Zusammenhangshypothese",
+        subtitle = "Zusammenhang zwischen persönlichem Bedrohungsempfinden und dem Social-Media Konsum",
         caption = " "
       ) +
-      theme_minimal()
+      theme_minimal() +
+      scale_x_continuous(breaks = c(1:6), limits = c(0.5, 6)) +
+     scale_y_continuous(breaks = c(1:6), limits = c(0.5, 6))
 
-![](README_files/figure-markdown_strict/unnamed-chunk-5-1.png)
+![](README_files/figure-markdown_strict/unnamed-chunk-6-1.png)
 
 -   “Die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen ist
     abhängig von der Sympathie für politische Parteien.”
@@ -429,19 +434,25 @@ alt="Faktorenraum" />
     ## mean of x mean of y 
     ##  4.324468  4.532609
 
-    ggplot(df) +
-      aes(x = PBE, y = konsumgroup) +
-      geom_boxplot(fill = "#112446") +
+    df %>%
+    group_by(konsumgroup) %>%
+    summarise(mean = mean(PBE)-1, sem_PBE = std.error(PBE)) %>%
+    ggplot() +
+      aes(x = konsumgroup, weight = mean, ymin = mean - sem_PBE, ymax = mean + sem_PBE, fill = konsumgroup) +
+      geom_bar(show.legend = FALSE) +
+      scale_fill_manual(values = c(rwthcolor$turquois, rwthcolor$green)) +
+      geom_errorbar(width = 0.2) +
       labs(
-        x = "persönliches Bedrohungsempfinden",
-        y = "Social-Media Konsum",
-        title = " ",
-        subtitle = " ",
-        caption = " "
+        x = "Social-Media Konsum",
+        y = "persönliches Bedrohungsempfinden (1- 5)",
+        title = "T-Test zur Unterschiedshypothese",
+        subtitle = "Gruppenvergleich von Personen mit hohem und niedrigem Social-Media Konsum bezüglich \nihres persönlichen Bedrohungsempfindens",
+        caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
       ) +
-      theme_minimal()
+      theme_minimal() +
+      scale_y_continuous(breaks = c(0:5), limits = c(0, 5))
 
-![](README_files/figure-markdown_strict/unnamed-chunk-8-1.png)
+![](README_files/figure-markdown_strict/unnamed-chunk-9-1.png)
 
 -   “Die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen
     unterscheidet sich bei Personen mit veganem Ernährungsverhalten im
@@ -465,20 +476,25 @@ alt="Faktorenraum" />
     ##  5.194444  3.947183
 
     df %>%
+      group_by(ef) %>%
      filter(!(ef %in% "vegetarisch")) %>%
-     ggplot() +
-      aes(x = BEK, y = ef) +
-      geom_boxplot(fill = "#112446") +
+     summarise(mean = mean(BEK)-1, sem_BEK = std.error(BEK)) %>%
+    ggplot() +
+      aes(x = ef, weight = mean, ymin = mean - sem_BEK, ymax = mean + sem_BEK, fill = ef) + 
+      geom_bar(show.legend = FALSE) +
+      scale_fill_manual(values = c(rwthcolor$turquois, rwthcolor$green)) +
+      geom_errorbar(width = 0.2) +
       labs(
-        x = "Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen",
-        y = "Ernährungsform",
-        title = " ",
-        subtitle = " ",
-        caption = " "
+        x = "Ernährungsform",
+        y = "Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen (1- 5)",
+        title = "T-Test zur Unterschiedshypothese",
+        subtitle = "Gruppenvergleich von Personen mit veganem und uneingeschränktem (omni) Essverhalten \nbezüglich ihres persönlichen Bedrohungsempfindens",
+        caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
       ) +
-      theme_minimal()
+      theme_minimal() +
+      scale_y_continuous(breaks = c(0:5), limits = c(0, 5))
 
-![](README_files/figure-markdown_strict/unnamed-chunk-10-1.png)
+![](README_files/figure-markdown_strict/unnamed-chunk-11-1.png)
 
 -   “Das persönliche Bedrohungsempfinden bezüglich des Klimawandels
     unterscheidet sich bei Personen mit linker politischer Orientierung
@@ -511,20 +527,25 @@ alt="Faktorenraum" />
     ##  4.583990  4.104762
 
     df %>%
-     filter(!is.na(linksrechts)) %>%
-     ggplot() +
-      aes(x = PBE, y = linksrechts) +
-      geom_boxplot(fill = "#112446") +
+      group_by(linksrechts) %>%
+      filter(!is.na(linksrechts)) %>%
+     summarise(mean = mean(PBE)-1, sem_PBE = std.error(PBE)) %>%
+    ggplot() +
+      aes(x = linksrechts, weight = mean, ymin = mean - sem_PBE, ymax = mean + sem_PBE, fill = linksrechts) + 
+      geom_bar(show.legend = FALSE) +
+      scale_fill_manual(values = c(rwthcolor$turquois, rwthcolor$green)) +
+      geom_errorbar(width = 0.2) +
       labs(
-        x = "persönliches bedrohungsempfinden",
-        y = "Sympathie für politische Parteien",
-        title = " ",
-        subtitle = " ",
-        caption = " "
+        x = "Sympathie für politische Parteien",
+        y = "persönliches Bedrohungsempfinden (1- 5)",
+        title = "T-Test zur Unterschiedshypothese",
+        subtitle = "Gruppenvergleich von Personen mit linker oder rechter politischer Orientierung \nbezüglich ihres persönlichen Bedrohungsempfindens",
+        caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
       ) +
-      theme_minimal()
+      theme_minimal() +
+      scale_y_continuous(breaks = c(0:5), limits = c(0, 5))
 
-![](README_files/figure-markdown_strict/unnamed-chunk-12-1.png)
+![](README_files/figure-markdown_strict/unnamed-chunk-13-1.png)
 
 -   **MANCOVA**
 
@@ -578,6 +599,8 @@ alt="Faktorenraum" />
     ##    Residuals    PBE                       78.7237994    172      0.4576965                              
     ##                 BEK                      122.5025541    172      0.7122242                              
     ##  ──────────────────────────────────────────────────────────────────────────────────────────────────────
+
+![](README_files/figure-markdown_strict/mancova-1.png)![](README_files/figure-markdown_strict/mancova-2.png)![](README_files/figure-markdown_strict/mancova-3.png)![](README_files/figure-markdown_strict/mancova-4.png)
 
 ## Variablennamen/ Legende
 

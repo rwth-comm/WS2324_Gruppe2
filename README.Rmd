@@ -187,7 +187,7 @@ ggplot() +
   geom_errorbar(width = 0.2) +
   labs(
     x = "Social-Media Konsum",
-    y = "persönliches Bedrohungsempfinden (1- 6)",
+    y = "persönliches Bedrohungsempfinden (1- 5)",
     title = "T-Test zur Unterschiedshypothese",
     subtitle = "Gruppenvergleich von Personen mit hohem und niedrigem Social-Media Konsum bezüglich \nihres persönlichen Bedrohungsempfindens",
     caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
@@ -219,7 +219,7 @@ ggplot() +
   geom_errorbar(width = 0.2) +
   labs(
     x = "Ernährungsform",
-    y = "Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen (1- 6)",
+    y = "Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen (1- 5)",
     title = "T-Test zur Unterschiedshypothese",
     subtitle = "Gruppenvergleich von Personen mit veganem und uneingeschränktem (omni) Essverhalten \nbezüglich ihres persönlichen Bedrohungsempfindens",
     caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
@@ -247,18 +247,27 @@ t.test(filter(df, df$linksrechts == "links")$PBE,
 ```
 ```{r}
 df %>%
- filter(!is.na(linksrechts)) %>%
- ggplot() +
-  aes(x = PBE, y = linksrechts) +
-  geom_boxplot(fill = "#112446") +
+  group_by(linksrechts) %>%
+  filter(!is.na(linksrechts)) %>%
+ summarise(mean = mean(PBE)-1, sem_PBE = std.error(PBE)) %>%
+ggplot() +
+  aes(x = linksrechts, weight = mean, ymin = mean - sem_PBE, ymax = mean + sem_PBE, fill = linksrechts) + 
+  geom_bar(show.legend = FALSE) +
+  scale_fill_manual(values = c(rwthcolor$turquois, rwthcolor$green)) +
+  geom_errorbar(width = 0.2) +
   labs(
-    x = "persönliches bedrohungsempfinden",
-    y = "Sympathie für politische Parteien",
-    title = " ",
-    subtitle = " ",
-    caption = " "
+    x = "Sympathie für politische Parteien",
+    y = "persönliches Bedrohungsempfinden (1- 5)",
+    title = "T-Test zur Unterschiedshypothese",
+    subtitle = "Gruppenvergleich von Personen mit linker oder rechter politischer Orientierung \nbezüglich ihres persönlichen Bedrohungsempfindens",
+    caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
   ) +
-  theme_minimal()
+  theme_minimal() +
+  scale_y_continuous(breaks = c(0:5), limits = c(0, 5))
+
+
+
+
 ```
 
   
@@ -300,18 +309,74 @@ haupteffekt4 <- res1$emm[[2]]$emmTable$asDF
 
 haupteffekt1 %>% 
 ggplot() +
- aes(x = urban, y = mean, ymin = lower, ymax = upper) +
-    geom_errorbar(colour = "black", width = 0.2) +
- geom_point() +
+  aes(x = urban, weight = mean-1, ymin = lower-1, ymax = upper-1, fill = urban) + 
+  geom_bar(show.legend = FALSE) +
+  scale_fill_manual(values = c(rwthcolor$turquois, rwthcolor$green, rwthcolor$maygreen)) +
+  geom_errorbar(colour = "black", width = 0.2) +
+  labs(
+    x = "Wohnort",
+    y = "persönliches Bedrohungsempfinden (1- 5)",
+    title = "T-Test zur Unterschiedshypothese",
+    subtitle = "Gruppenvergleich von Personen mit linker oder rechter politischer Orientierung \nbezüglich ihres persönlichen Bedrohungsempfindens",
+    caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
+  ) +
  theme_minimal()
 
 
+
+haupteffekt2 %>% 
+ggplot() +
+  aes(x = ef, weight = mean-1, ymin = lower-1, ymax = upper-1, fill = ef) + 
+  geom_bar(show.legend = FALSE) +
+  scale_fill_manual(values = c(rwthcolor$petrol, rwthcolor$lightblue)) +
+    geom_errorbar(colour = "black", width = 0.2) +
+  labs(
+    x = "Ernährungsform",
+    y = "Bereitschaft zum Ergreifen der Maßnahmen (1- 5)",
+    title = "T-Test zur Unterschiedshypothese",
+    subtitle = "Gruppenvergleich von Personen mit linker oder rechter politischer Orientierung \nbezüglich ihres persönlichen Bedrohungsempfindens",
+    caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
+  ) +
+ theme_minimal()
+
+
+
+
+haupteffekt3 %>% 
+ggplot() +
+  aes(x = urban, weight = mean-1, ymin = lower-1, ymax = upper-1, fill = urban) + 
+  geom_bar(show.legend = FALSE) +
+  scale_fill_manual(values = c(rwthcolor$turquois, rwthcolor$green, rwthcolor$maygreen)) +
+    geom_errorbar(colour = "black", width = 0.2) +
+  labs(
+    x = "Wohnort",
+    y = "persönliches Bedrohungsempfinden (1- 5)",
+    title = "T-Test zur Unterschiedshypothese",
+    subtitle = "Gruppenvergleich von Personen mit linker oder rechter politischer Orientierung \nbezüglich ihres persönlichen Bedrohungsempfindens",
+    caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
+  ) +
+ theme_minimal()
+
+
+
+
+
+haupteffekt4 %>% 
+ggplot() +
+  aes(x = ef, weight = mean-1, ymin = lower-1, ymax = upper-1, fill = ef) + 
+  geom_bar(show.legend = FALSE) +
+  scale_fill_manual(values = c(rwthcolor$petrol, rwthcolor$lightblue)) +
+    geom_errorbar(colour = "black", width = 0.2) +
+  labs(
+    x = "Ernährungsform",
+    y = "Bereitschaft zum Ergreifen der Maßnahmen (1- 5)",
+    title = "T-Test zur Unterschiedshypothese",
+    subtitle = "Gruppenvergleich von Personen mit linker oder rechter politischer Orientierung \nbezüglich ihres persönlichen Bedrohungsempfindens",
+    caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
+  ) +
+ theme_minimal()
+
 ```
-
-```{r}
-
-```
-
 
 ## Variablennamen/ Legende
 
