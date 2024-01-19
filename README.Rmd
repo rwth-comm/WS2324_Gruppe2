@@ -75,6 +75,12 @@ ggplot(df) +
  theme_minimal()
 
 ```
+```{r}
+descriptives <- psych::describe(df)[c(42:45),c(3,4,5,8,9)]
+descriptives$alpha <- c(0.37, 0.88, 0.68, 0.81)
+descriptives[,c(6,1:5)]
+```
+
 
 ## Hypothesen
 * **Zusammenhangshypothesen** 
@@ -258,6 +264,36 @@ df %>%
   jmv::mancova(dep = c(PBE, BEK), 
                covs = age,
                factors = c("urban", "ef"))
+df %>% 
+  filter(ef != "vegan") %>% 
+  droplevels() %>%
+  jmv::ancova(dep = PBE, 
+               covs = age,
+               factors = c("urban", "ef")) -> he1
+df %>% 
+  filter(ef != "vegan") %>% 
+  droplevels() %>%
+  jmv::ancova(dep = BEK, 
+               covs = age,
+               factors = c("urban", "ef")) -> he2
+
+df %>% 
+  filter(gender != "rather not say") %>% 
+  droplevels() %>%
+  jmv::ancova(dep = diff_pref, 
+              covs = age,
+               factors = c("gender", "jobtypegroup"),
+             emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("gender"), c("jobtypegroup"),
+                                                                c("gender", "jobtypegroup"),
+                                                                c("jobtypegroup", "gender"))) -> mancova2
+
+mancova1he1 <- mancova1$emm[[1]]$emmTable$asDF
+mancova1he2 <- mancova1$emm[[2]]$emmTable$asDF
+mancova1ie <- mancova1$emm[[3]]$emmTable$asDF
+
+mancova2he1 <- mancova2$emm[[1]]$emmTable$asDF
+mancova2he2 <- mancova2$emm[[2]]$emmTable$asDF
+mancova2ie <- mancova2$emm[[3]]$emmTable$asDF
 
 ```
 
