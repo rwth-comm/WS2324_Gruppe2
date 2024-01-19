@@ -70,7 +70,7 @@ library(ggplot2)
 
 ggplot(df) +
  aes(x = age) +
- geom_histogram(bins = 30L, fill = "#112446") +
+ geom_histogram(bins = 30L, fill = rwthcolor$turquois) +
  labs(x = "Alter in Jahren", y = "Anzahl", 
  title = "Stichprobe", 
  subtitle = paste0("Altersverteilung im Histogramm (n=",nrow(df), ")") )+
