@@ -12,6 +12,7 @@ df <- readRDS("data/dataFromNumeric.rds")
 library(tidyverse)
 library(psych)
 library(jmv)
+library(plotrix)
 source("qualtricshelpers.R")
 rwthcolor <- hcictools::rwth.colorpalette()
 ```
@@ -176,19 +177,23 @@ t.test(filter(df, df$konsumgroup == "hoch")$PBE,
 ```
 
 ```{r}
-ggplot(df) +
-  aes(x = PBE, y = konsumgroup, fill = konsumgroup) +
-  geom_boxplot() +
+df %>%
+group_by(konsumgroup) %>%
+summarise(mean = mean(PBE)-1, sem_PBE = std.error(PBE)) %>%
+ggplot() +
+  aes(x = konsumgroup, weight = mean, ymin = mean - sem_PBE, ymax = mean + sem_PBE, fill = konsumgroup) +
+  geom_bar(show.legend = FALSE) +
   scale_fill_manual(values = c(rwthcolor$turquois, rwthcolor$green)) +
+  geom_errorbar(width = 0.2) +
   labs(
-    x = "persönliches Bedrohungsempfinden (1- 6)",
-    y = "Social-Media Konsum",
+    x = "Social-Media Konsum",
+    y = "persönliches Bedrohungsempfinden (1- 6)",
     title = "T-Test zur Unterschiedshypothese",
     subtitle = "Gruppenvergleich von Personen mit hohem und niedrigem Social-Media Konsum bezüglich \nihres persönlichen Bedrohungsempfindens",
     caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
   ) +
   theme_minimal() +
-  scale_x_continuous(breaks = c(1:6), limits = c(1, 6))
+  scale_y_continuous(breaks = c(0:5), limits = c(0, 5))
 ```
 
 
@@ -204,18 +209,23 @@ t.test(filter(df, df$ef == "vegan")$BEK,
 
 ```{r}
 df %>%
+  group_by(ef) %>%
  filter(!(ef %in% "vegetarisch")) %>%
- ggplot() +
-  aes(x = BEK, y = ef) +
-  geom_boxplot(fill = "#112446") +
+ summarise(mean = mean(BEK)-1, sem_BEK = std.error(BEK)) %>%
+ggplot() +
+  aes(x = ef, weight = mean, ymin = mean - sem_BEK, ymax = mean + sem_BEK, fill = ef) + 
+  geom_bar(show.legend = FALSE) +
+  scale_fill_manual(values = c(rwthcolor$turquois, rwthcolor$green)) +
+  geom_errorbar(width = 0.2) +
   labs(
-    x = "Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen",
-    y = "Ernährungsform",
-    title = " ",
-    subtitle = " ",
-    caption = " "
+    x = "Ernährungsform",
+    y = "Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen (1- 6)",
+    title = "T-Test zur Unterschiedshypothese",
+    subtitle = "Gruppenvergleich von Personen mit veganem und uneingeschränktem (omni) Essverhalten \nbezüglich ihres persönlichen Bedrohungsempfindens",
+    caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
   ) +
-  theme_minimal()
+  theme_minimal() +
+  scale_y_continuous(breaks = c(0:5), limits = c(0, 5))
 ```
 
 
