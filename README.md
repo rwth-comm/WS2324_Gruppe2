@@ -133,6 +133,24 @@ alt="Faktorenraum" />
     ##       cor 
     ## 0.4972108
 
+    ggplot(df) +
+      aes(x = BEK, y = PBE) +
+      geom_point(
+        shape = "circle",
+        size = 1.65,
+        colour = "#112446"
+      ) +
+      labs(
+        x = "Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen ",
+        y = "persönliches Bedrohungsempfinden ",
+        title = " ",
+        subtitle = " ",
+        caption = " "
+      ) +
+      theme_minimal()
+
+![](README_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+
 -   “Je häufiger Social-Media konsumiert wird, desto höher ist das
     persönliche Bedrohungsempfinden bezüglich des Klimawandels. (lineare
     Regression)”
@@ -152,6 +170,24 @@ alt="Faktorenraum" />
     ## sample estimates:
     ##       cor 
     ## 0.1476144
+
+    ggplot(df) +
+      aes(x = PBE, y = SMK) +
+      geom_point(
+        shape = "circle",
+        size = 1.65,
+        colour = "#112446"
+      ) +
+      labs(
+        x = "persönliches Bedrohungsempfinden",
+        y = "Social-Media Konsum",
+        title = " ",
+        subtitle = " ",
+        caption = " "
+      ) +
+      theme_minimal()
+
+![](README_files/figure-markdown_strict/unnamed-chunk-5-1.png)
 
 -   “Die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen ist
     abhängig von der Sympathie für politische Parteien.”
@@ -393,6 +429,20 @@ alt="Faktorenraum" />
     ## mean of x mean of y 
     ##  4.324468  4.532609
 
+    ggplot(df) +
+      aes(x = PBE, y = konsumgroup) +
+      geom_boxplot(fill = "#112446") +
+      labs(
+        x = "persönliches Bedrohungsempfinden",
+        y = "Social-Media Konsum",
+        title = " ",
+        subtitle = " ",
+        caption = " "
+      ) +
+      theme_minimal()
+
+![](README_files/figure-markdown_strict/unnamed-chunk-8-1.png)
+
 -   “Die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen
     unterscheidet sich bei Personen mit veganem Ernährungsverhalten im
     Gegensatz zu Personen mit uneingeschränktem Ernährungsverhalten.”
@@ -413,6 +463,22 @@ alt="Faktorenraum" />
     ## sample estimates:
     ## mean of x mean of y 
     ##  5.194444  3.947183
+
+    df %>%
+     filter(!(ef %in% "vegetarisch")) %>%
+     ggplot() +
+      aes(x = BEK, y = ef) +
+      geom_boxplot(fill = "#112446") +
+      labs(
+        x = "Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen",
+        y = "Ernährungsform",
+        title = " ",
+        subtitle = " ",
+        caption = " "
+      ) +
+      theme_minimal()
+
+![](README_files/figure-markdown_strict/unnamed-chunk-10-1.png)
 
 -   “Das persönliche Bedrohungsempfinden bezüglich des Klimawandels
     unterscheidet sich bei Personen mit linker politischer Orientierung
@@ -444,12 +510,27 @@ alt="Faktorenraum" />
     ## mean of x mean of y 
     ##  4.583990  4.104762
 
+    df %>%
+     filter(!is.na(linksrechts)) %>%
+     ggplot() +
+      aes(x = PBE, y = linksrechts) +
+      geom_boxplot(fill = "#112446") +
+      labs(
+        x = "persönliches bedrohungsempfinden",
+        y = "Sympathie für politische Parteien",
+        title = " ",
+        subtitle = " ",
+        caption = " "
+      ) +
+      theme_minimal()
+
+![](README_files/figure-markdown_strict/unnamed-chunk-12-1.png)
+
 -   **MANCOVA**
 
--   “Geschlecht, Wohnort und Ernährungsform haben bei kontrolliertem
-    Alterseinfluss einen Einfluss auf das persönliche
-    Bedrohungsempfinden und auf die Bereitschaft zum Ergreifen von
-    Klimaschutzmaßnahmen.”
+-   “Wohnort und Ernährungsform haben bei kontrolliertem Alterseinfluss
+    einen Einfluss auf das persönliche Bedrohungsempfinden und auf die
+    Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen.”
 
 <!-- -->
 

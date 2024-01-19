@@ -85,11 +85,47 @@ ggplot(df) +
 cor.test(df$PBE, df$BEK, method = "pearson", alternative = "two.sided") 
 ```
 
+```{r}
+ggplot(df) +
+  aes(x = BEK, y = PBE) +
+  geom_point(
+    shape = "circle",
+    size = 1.65,
+    colour = "#112446"
+  ) +
+  labs(
+    x = "Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen ",
+    y = "persönliches Bedrohungsempfinden ",
+    title = " ",
+    subtitle = " ",
+    caption = " "
+  ) +
+  theme_minimal()
+```
+
 
 * "Je häufiger Social-Media konsumiert wird, desto höher ist das persönliche Bedrohungsempfinden bezüglich des Klimawandels. (lineare Regression)"
 
 ```{r}
 cor.test(df$SMK, df$PBE, method = "pearson", alternative = "two.sided") 
+```
+
+```{r}
+ggplot(df) +
+  aes(x = PBE, y = SMK) +
+  geom_point(
+    shape = "circle",
+    size = 1.65,
+    colour = "#112446"
+  ) +
+  labs(
+    x = "persönliches Bedrohungsempfinden",
+    y = "Social-Media Konsum",
+    title = " ",
+    subtitle = " ",
+    caption = " "
+  ) +
+  theme_minimal()
 ```
 
 
@@ -134,6 +170,20 @@ t.test(filter(df, df$konsumgroup == "hoch")$PBE,
 
 ```
 
+```{r}
+ggplot(df) +
+  aes(x = PBE, y = konsumgroup) +
+  geom_boxplot(fill = "#112446") +
+  labs(
+    x = "persönliches Bedrohungsempfinden",
+    y = "Social-Media Konsum",
+    title = " ",
+    subtitle = " ",
+    caption = " "
+  ) +
+  theme_minimal()
+```
+
 
 * "Die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen unterscheidet sich bei Personen mit veganem Ernährungsverhalten im Gegensatz zu Personen mit uneingeschränktem Ernährungsverhalten." 
 
@@ -143,6 +193,22 @@ t.test(filter(df, df$konsumgroup == "hoch")$PBE,
 t.test(filter(df, df$ef == "vegan")$BEK, 
        filter(df, df$ef == "omni")$BEK)
 
+```
+
+```{r}
+df %>%
+ filter(!(ef %in% "vegetarisch")) %>%
+ ggplot() +
+  aes(x = BEK, y = ef) +
+  geom_boxplot(fill = "#112446") +
+  labs(
+    x = "Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen",
+    y = "Ernährungsform",
+    title = " ",
+    subtitle = " ",
+    caption = " "
+  ) +
+  theme_minimal()
 ```
 
 
@@ -162,11 +228,26 @@ df$linksrechts <- as.factor(df$linksrechts)
 t.test(filter(df, df$linksrechts == "links")$PBE, 
        filter(df, df$linksrechts == "rechts")$PBE)
 ```
+```{r}
+df %>%
+ filter(!is.na(linksrechts)) %>%
+ ggplot() +
+  aes(x = PBE, y = linksrechts) +
+  geom_boxplot(fill = "#112446") +
+  labs(
+    x = "persönliches bedrohungsempfinden",
+    y = "Sympathie für politische Parteien",
+    title = " ",
+    subtitle = " ",
+    caption = " "
+  ) +
+  theme_minimal()
+```
 
   
 * **MANCOVA** 
 
-* "Geschlecht, Wohnort und Ernährungsform haben bei kontrolliertem Alterseinfluss einen Einfluss auf das persönliche Bedrohungsempfinden und auf die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen."
+* "Wohnort und Ernährungsform haben bei kontrolliertem Alterseinfluss einen Einfluss auf das persönliche Bedrohungsempfinden und auf die Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen."
 
 ```{r mancova, echo=FALSE}
 #jmv::mancova(data = df, factors = c("urban", "ef"), deps = c("PBE", "BEK"), covs = c(age), multivar = list("pillai", "wilks", "hotel", "roy"))
@@ -178,8 +259,12 @@ df %>%
                covs = age,
                factors = c("urban", "ef"))
 
+```
+
+```{r}
 
 ```
+
 
 ## Variablennamen/ Legende
 
