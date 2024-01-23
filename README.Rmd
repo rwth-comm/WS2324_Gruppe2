@@ -80,6 +80,10 @@ ggplot(df) +
 ```{r, echo=FALSE}
 descriptives <- psych::describe(df)[c(42:45),c(3,4,5,8,9)]
 descriptives$alpha <- c(0.37, 0.88, 0.68, 0.81)
+descriptives$mean <- descriptives$mean-1
+descriptives$median <- descriptives$median-1
+descriptives$min <- descriptives$min-1
+descriptives$max <- descriptives$max-1
 descriptives[,c(6,1:5)]
 ```
 
@@ -95,18 +99,18 @@ cor.test(df$PBE, df$BEK, method = "pearson", alternative = "two.sided")
 
 ```{r, echo=FALSE}
 ggplot(df) +
-  aes(x = PBE, y = BEK) +
+  aes(x = PBE-1, y = BEK-1) +
   geom_jitter(shape = 21, size = 1.8, colour = rwthcolor$turquois, fill = rwthcolor$turquois, alpha = 0.6) +
   labs(
-    x = "persönliches Bedrohungsempfinden (1- 6)",
-    y = "Bereitschaft zum Ergreifen der Maßnahmen (1- 6)",
+    x = "persönliches Bedrohungsempfinden (0- 5)",
+    y = "Bereitschaft zum Ergreifen der Maßnahmen (0- 5)",
     title = "Korrelation der Zusammenhangshypothese",
     subtitle = "Zusammenhang zwischen persönlichem Bedrohungsempfinden und der Bereitschaft \nzum Ergreifen von Klimaschutzmaßnhamen",
     caption = " "
   ) +
   theme_minimal() +
-  scale_x_continuous(breaks = c(1:6), limits = c(0.5, 6.5)) +
-  scale_y_continuous(breaks = c(1:6), limits = c(0.5, 6.5))
+  scale_x_continuous(breaks = c(0:5), limits = c(-0.5, 5.5)) +
+  scale_y_continuous(breaks = c(0:5), limits = c(-0.5, 5.5))
 
 ```
 
@@ -119,18 +123,18 @@ cor.test(df$SMK, df$PBE, method = "pearson", alternative = "two.sided")
 
 ```{r, echo=FALSE}
 ggplot(df) +
-  aes(x = PBE, y = SMK) +
+  aes(x = PBE-1, y = SMK-1) +
   geom_jitter(shape = 21, size = 1.8, colour = rwthcolor$turquois, fill = rwthcolor$turquois, alpha = 0.6) +
   labs(
-    x = "persönliches Bedrohungsempfinden (1- 6)",
-    y = "Social-Media Konsum (1- 6)",
+    x = "persönliches Bedrohungsempfinden (0- 5)",
+    y = "Social-Media Konsum (0- 5)",
     title = "Korrelation der Zusammenhangshypothese",
     subtitle = "Zusammenhang zwischen persönlichem Bedrohungsempfinden und dem Social-Media Konsum",
     caption = " "
   ) +
   theme_minimal() +
-  scale_x_continuous(breaks = c(1:6), limits = c(0.5, 6)) +
- scale_y_continuous(breaks = c(1:6), limits = c(0.5, 6))
+  scale_x_continuous(breaks = c(0:5), limits = c(-0.5, 5.5)) +
+ scale_y_continuous(breaks = c(0:5), limits = c(-0.5, 5.5))
 
 ```
 
@@ -167,12 +171,12 @@ jmv::linReg(data = df,
 
 ```{r, echo=FALSE}
 
-df$konsumgroup <- cut(df$SMK, 
+df$konsumgroup <- cut(df$SMK-1, 
                       labels = c("hoch", "niedrig"), 
-                      breaks = c(-Inf, median(df$SMK), Inf))
+                      breaks = c(-Inf, median(df$SMK)-1, Inf))
 
-t.test(filter(df, df$konsumgroup == "hoch")$PBE,
-       filter(df, df$konsumgroup == "niedrig")$PBE)
+t.test(filter(df, df$konsumgroup == "hoch")$PBE-1,
+       filter(df, df$konsumgroup == "niedrig")$PBE-1)
 
 ```
 
@@ -202,8 +206,8 @@ ggplot() +
 # Unverbundener T-Test:
 ```{r, echo=FALSE} 
 
-t.test(filter(df, df$ef == "vegan")$BEK, 
-       filter(df, df$ef == "omni")$BEK)
+t.test(filter(df, df$ef == "vegan")$BEK-1, 
+       filter(df, df$ef == "omni")$BEK-1)
 
 ```
 
@@ -219,7 +223,7 @@ ggplot() +
   geom_errorbar(width = 0.2) +
   labs(
     x = "Ernährungsform",
-    y = "Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen (1- 5)",
+    y = "Bereitschaft zum Ergreifen von Klimaschutzmaßnahmen (0- 5)",
     title = "T-Test zur Unterschiedshypothese",
     subtitle = "Gruppenvergleich von Personen mit veganem und uneingeschränktem (omni) Essverhalten \nbezüglich ihres persönlichen Bedrohungsempfindens",
     caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
@@ -242,8 +246,8 @@ df %>% mutate(linksrechts = case_when(leftparty == rightparty ~ NA,
 
 df$linksrechts <- as.factor(df$linksrechts)
 
-t.test(filter(df, df$linksrechts == "links")$PBE, 
-       filter(df, df$linksrechts == "rechts")$PBE)
+t.test(filter(df, df$linksrechts == "links")$PBE-1, 
+       filter(df, df$linksrechts == "rechts")$PBE-1)
 ```
 ```{r, echo=FALSE}
 df %>%
@@ -257,7 +261,7 @@ ggplot() +
   geom_errorbar(width = 0.2) +
   labs(
     x = "Sympathie für politische Parteien",
-    y = "persönliches Bedrohungsempfinden (1- 5)",
+    y = "persönliches Bedrohungsempfinden (0- 5)",
     title = "T-Test zur Unterschiedshypothese",
     subtitle = "Gruppenvergleich von Personen mit linker oder rechter politischer Orientierung \nbezüglich ihres persönlichen Bedrohungsempfindens",
     caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
@@ -315,7 +319,7 @@ ggplot() +
   geom_errorbar(colour = "black", width = 0.2) +
   labs(
     x = "Wohnort",
-    y = "persönliches Bedrohungsempfinden (1- 5)",
+    y = "persönliches Bedrohungsempfinden (0- 5)",
     title = "Mancova",
     subtitle = "Einfluss des Wohnortes auf das persönliche Bedrohungsempfinden bei kontrolliertem Alterseinfluss",
     caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
@@ -332,7 +336,7 @@ ggplot() +
     geom_errorbar(colour = "black", width = 0.2) +
   labs(
     x = "Ernährungsform",
-    y = "Bereitschaft zum Ergreifen der Maßnahmen (1- 5)",
+    y = "Bereitschaft zum Ergreifen der Maßnahmen (0- 5)",
     title = "Mancova",
     subtitle = "Einfluss der Ernährungsform auf das persönliche Bedrohungsempfinden bei kontrolliertem Alterseinfluss",
     caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
@@ -350,7 +354,7 @@ ggplot() +
     geom_errorbar(colour = "black", width = 0.2) +
   labs(
     x = "Wohnort",
-    y = "persönliches Bedrohungsempfinden (1- 5)",
+    y = "persönliches Bedrohungsempfinden (0- 5)",
     title = "Mancova",
     subtitle = "Einfluss des Wohnortes auf die Bereitschaft zum Ergreifen von Maßnahmen bei kontrolliertem Alterseinfluss",
     caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
@@ -369,7 +373,7 @@ ggplot() +
     geom_errorbar(colour = "black", width = 0.2) +
   labs(
     x = "Ernährungsform",
-    y = "Bereitschaft zum Ergreifen der Maßnahmen (1- 5)",
+    y = "Bereitschaft zum Ergreifen der Maßnahmen (0- 5)",
     title = "Mancova",
     subtitle = "Einfluss der Ernährunsform auf die Bereitschaft zum Ergreifen von Maßnahmen bei kontrolliertem Alterseinfluss",
     caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"

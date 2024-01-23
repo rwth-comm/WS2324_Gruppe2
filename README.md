@@ -100,10 +100,10 @@ alt="Faktorenraum" />
 ![](README_files/figure-markdown_strict/unnamed-chunk-1-1.png)
 
     ##     alpha mean   sd median min max
-    ## SMK  0.37 2.51 0.71   2.43   1 5.0
-    ## PO   0.88 4.40 1.08   4.50   1 6.0
-    ## PBE  0.68 4.43 0.72   4.50   1 5.5
-    ## BEK  0.81 4.16 0.94   4.33   1 6.0
+    ## SMK  0.37 1.51 0.71   1.43   0 4.0
+    ## PO   0.88 3.40 1.08   3.50   0 5.0
+    ## PBE  0.68 3.43 0.72   3.50   0 4.5
+    ## BEK  0.81 3.16 0.94   3.33   0 5.0
 
 ## Hypothesen
 
@@ -365,14 +365,14 @@ alt="Faktorenraum" />
     ## 
     ##  Welch Two Sample t-test
     ## 
-    ## data:  filter(df, df$konsumgroup == "hoch")$PBE and filter(df, df$konsumgroup == "niedrig")$PBE
+    ## data:  filter(df, df$konsumgroup == "hoch")$PBE - 1 and filter(df, df$konsumgroup == "niedrig")$PBE - 1
     ## t = -1.9867, df = 174.33, p-value = 0.04852
     ## alternative hypothesis: true difference in means is not equal to 0
     ## 95 percent confidence interval:
     ##  -0.414915092 -0.001366129
     ## sample estimates:
     ## mean of x mean of y 
-    ##  4.324468  4.532609
+    ##  3.324468  3.532609
 
 ![](README_files/figure-markdown_strict/unnamed-chunk-10-1.png)
 
@@ -385,14 +385,14 @@ alt="Faktorenraum" />
     ## 
     ##  Welch Two Sample t-test
     ## 
-    ## data:  filter(df, df$ef == "vegan")$BEK and filter(df, df$ef == "omni")$BEK
+    ## data:  filter(df, df$ef == "vegan")$BEK - 1 and filter(df, df$ef == "omni")$BEK - 1
     ## t = 5.0855, df = 6.0937, p-value = 0.002153
     ## alternative hypothesis: true difference in means is not equal to 0
     ## 95 percent confidence interval:
     ##  0.6493716 1.8451511
     ## sample estimates:
     ## mean of x mean of y 
-    ##  5.194444  3.947183
+    ##  4.194444  2.947183
 
 ![](README_files/figure-markdown_strict/unnamed-chunk-12-1.png)
 
@@ -405,14 +405,14 @@ alt="Faktorenraum" />
     ## 
     ##  Welch Two Sample t-test
     ## 
-    ## data:  filter(df, df$linksrechts == "links")$PBE and filter(df, df$linksrechts == "rechts")$PBE
+    ## data:  filter(df, df$linksrechts == "links")$PBE - 1 and filter(df, df$linksrechts == "rechts")$PBE - 1
     ## t = 3.2286, df = 44.342, p-value = 0.002344
     ## alternative hypothesis: true difference in means is not equal to 0
     ## 95 percent confidence interval:
     ##  0.1801432 0.7783120
     ## sample estimates:
     ## mean of x mean of y 
-    ##  4.583990  4.104762
+    ##  3.583990  3.104762
 
 ![](README_files/figure-markdown_strict/unnamed-chunk-14-1.png)
 
