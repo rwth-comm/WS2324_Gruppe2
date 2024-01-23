@@ -366,13 +366,13 @@ alt="Faktorenraum" />
     ##  Welch Two Sample t-test
     ## 
     ## data:  filter(df, df$konsumgroup == "hoch")$PBE - 1 and filter(df, df$konsumgroup == "niedrig")$PBE - 1
-    ## t = -1.9867, df = 174.33, p-value = 0.04852
+    ## t = 1.9867, df = 174.33, p-value = 0.04852
     ## alternative hypothesis: true difference in means is not equal to 0
     ## 95 percent confidence interval:
-    ##  -0.414915092 -0.001366129
+    ##  0.001366129 0.414915092
     ## sample estimates:
     ## mean of x mean of y 
-    ##  3.324468  3.532609
+    ##  3.532609  3.324468
 
 ![](README_files/figure-markdown_strict/unnamed-chunk-10-1.png)
 

@@ -172,7 +172,7 @@ jmv::linReg(data = df,
 ```{r, echo=FALSE}
 
 df$konsumgroup <- cut(df$SMK-1, 
-                      labels = c("hoch", "niedrig"), 
+                      labels = c("niedrig", "hoch"), 
                       breaks = c(-Inf, median(df$SMK)-1, Inf))
 
 t.test(filter(df, df$konsumgroup == "hoch")$PBE-1,
@@ -191,7 +191,7 @@ ggplot() +
   geom_errorbar(width = 0.2) +
   labs(
     x = "Social-Media Konsum",
-    y = "persönliches Bedrohungsempfinden (1- 5)",
+    y = "persönliches Bedrohungsempfinden (0- 5)",
     title = "T-Test zur Unterschiedshypothese",
     subtitle = "Gruppenvergleich von Personen mit hohem und niedrigem Social-Media Konsum bezüglich \nihres persönlichen Bedrohungsempfindens",
     caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes"
